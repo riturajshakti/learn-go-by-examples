@@ -34,3 +34,8 @@ func Backward[T any](s []T) func(func(int, T) bool) {
 1 green
 0 red
 ```
+
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./os.md) | [Home Page](../README.md) | [Next Page >](./generics.md) |
+|  |  |  |

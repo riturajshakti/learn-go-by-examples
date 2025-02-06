@@ -260,3 +260,8 @@ if err != nil {
 ```
 45.6
 ```
+
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./data-types.md) | [Home Page](../README.md) | [Next Page >](./slices.md) |
+|  |  |  |

@@ -99,3 +99,7 @@ func main() {
 </code></pre>
 ```
 
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./generics.md) | [Home Page](../README.md) | Next Page > |
+|  |  |  |

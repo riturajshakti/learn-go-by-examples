@@ -390,3 +390,8 @@ fmt.Println(strings.Repeat(s, 3))
 ```
 ABCABCABC
 ```
+
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./console-io.md) | [Home Page](../README.md) | [Next Page >](./data-types.md) |
+|  |  |  |

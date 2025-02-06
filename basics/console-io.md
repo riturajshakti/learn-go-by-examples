@@ -99,3 +99,9 @@ Numbers are:  4 5
 Enter bool value: true
 Value is: true
 ```
+
+
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./comments.md) | [Home Page](../README.md) | [Next Page >](./strings.md) |
+|  |  |  |

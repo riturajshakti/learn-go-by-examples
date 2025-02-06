@@ -165,3 +165,8 @@ fmt.Println("In days: ", float64(date1.UnixMilli()-date2.UnixMilli())/1000/60/60
 a - b:  63072000000
 In days:  730
 ```
+
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./operators.md) | [Home Page](../README.md) | [Next Page >](./conditionals-loops.md) |
+|  |  |  |

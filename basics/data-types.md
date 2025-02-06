@@ -139,3 +139,8 @@ fmt.Println(x)
 Test
 true
 ```
+
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./strings.md) | [Home Page](../README.md) | [Next Page >](./numbers.md) |
+|  |  |  |

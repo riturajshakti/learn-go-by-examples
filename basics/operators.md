@@ -39,3 +39,8 @@ func Conditional[T any](condition bool, truthy T, falsy T) T {
 ```
 4 is larger
 ```
+
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./regex.md) | [Home Page](../README.md) | [Next Page >](./datetime.md) |
+|  |  |  |

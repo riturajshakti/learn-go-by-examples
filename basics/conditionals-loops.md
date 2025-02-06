@@ -123,3 +123,8 @@ for i := range 3 {
 1
 2
 ```
+
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./datetime.md) | [Home Page](../README.md) | [Next Page >](./functions.md) |
+|  |  |  |

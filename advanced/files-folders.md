@@ -676,3 +676,8 @@ File: temp\list.txt
 Directory: temp\test
 File: temp\test\ok.txt
 ```
+
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./web-client.md) | [Home Page](../README.md) | [Next Page >](./os.md) |
+|  |  |  |

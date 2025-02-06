@@ -70,3 +70,8 @@ fmt.Println(string(list[1]))
 The
 the
 ```
+
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./maps.md) | [Home Page](../README.md) | [Next Page >](./operators.md) |
+|  |  |  |

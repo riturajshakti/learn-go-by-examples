@@ -200,3 +200,8 @@ if err == nil {
 ```
 JSON string is valid
 ```
+
+|  |  |  |
+| --- | --- | --- |
+| [< Previous Page](./functions.md) | [Home Page](../README.md) | [Next Page >](./errors.md) |
+|  |  |  |
