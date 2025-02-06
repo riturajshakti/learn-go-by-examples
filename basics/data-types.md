@@ -81,7 +81,7 @@ x is slice
 
 ```go
 type User struct {
-	Name string
+  Name string
 }
 
 var x any

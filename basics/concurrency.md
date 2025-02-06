@@ -286,36 +286,36 @@ Time Taken: 84 ms
 
 ```go
 type SafeCounter struct {
-	mu  sync.Mutex
-	val int
+  mu  sync.Mutex
+  val int
 }
 
 func (c *SafeCounter) Increment() {
-	c.mu.Lock()
-	defer c.mu.Unlock()
-	c.val++
+  c.mu.Lock()
+  defer c.mu.Unlock()
+  c.val++
 }
 
 func (c *SafeCounter) Get() int {
-	c.mu.Lock()
-	defer c.mu.Unlock()
-	return c.val
+  c.mu.Lock()
+  defer c.mu.Unlock()
+  return c.val
 }
 
 func main() {
-	counter := SafeCounter{}
-	var wg sync.WaitGroup
+  counter := SafeCounter{}
+  var wg sync.WaitGroup
 
-	for i := 0; i < 10; i++ {
-		wg.Add(1)
-		go func() {
-			defer wg.Done()
-			counter.Increment()
-		}()
-	}
+  for i := 0; i < 10; i++ {
+    wg.Add(1)
+    go func() {
+      defer wg.Done()
+      counter.Increment()
+    }()
+  }
 
-	wg.Wait()
-	fmt.Println("Final count:", counter.Get())
+  wg.Wait()
+  fmt.Println("Final count:", counter.Get())
 }
 ```
 

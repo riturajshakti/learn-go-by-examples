@@ -8,32 +8,32 @@
 package main
 
 import (
-	"fmt"
-	"io"
-	"net/http"
+  "fmt"
+  "io"
+  "net/http"
 )
 
 func main() {
-	url := "https://jsonplaceholder.typicode.com/posts/1"
-	res, err := http.Get(url)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	defer res.Body.Close()
+  url := "https://jsonplaceholder.typicode.com/posts/1"
+  res, err := http.Get(url)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
 
   if res.StatusCode != http.StatusOK {
-		fmt.Println("Request failed with status:", res.Status)
-		return
-	}
+    fmt.Println("Request failed with status:", res.Status)
+    return
+  }
 
-	jsonString, err := io.ReadAll(res.Body)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  jsonString, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	fmt.Println(string(jsonString))
+  fmt.Println(string(jsonString))
 }
 ```
 
@@ -54,40 +54,40 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"io"
-	"net/http"
-	"time"
+  "fmt"
+  "io"
+  "net/http"
+  "time"
 )
 
 func main() {
-	url := "https://jsonplaceholder.typicode.com/posts/1"
-	client := &http.Client{Timeout: 10 * time.Second}
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  url := "https://jsonplaceholder.typicode.com/posts/1"
+  client := &http.Client{Timeout: 10 * time.Second}
+  req, err := http.NewRequest("GET", url, nil)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	res, err := client.Do(req)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	defer res.Body.Close()
+  res, err := client.Do(req)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
 
-	if res.StatusCode != http.StatusOK {
-		fmt.Println("Request failed with status:", res.Status)
-		return
-	}
+  if res.StatusCode != http.StatusOK {
+    fmt.Println("Request failed with status:", res.Status)
+    return
+  }
 
-	jsonString, err := io.ReadAll(res.Body)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  jsonString, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	fmt.Println(string(jsonString))
+  fmt.Println(string(jsonString))
 }
 ```
 
@@ -108,29 +108,29 @@ func main() {
 package main
 
 import (
-	"fmt"
+  "fmt"
 
-	"github.com/riturajshakti/apicall"
+  "github.com/riturajshakti/apicall"
 )
 
 func main() {
-	res, err := apicall.ApiCall(&apicall.Request{
-		Url: "https://jsonplaceholder.typicode.com/posts/1",
-	})
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  res, err := apicall.ApiCall(&apicall.Request{
+    Url: "https://jsonplaceholder.typicode.com/posts/1",
+  })
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	if res.StatusCode != 200 {
-		fmt.Println("API call was not successful:", res.StatusMessage)
-		return
-	}
+  if res.StatusCode != 200 {
+    fmt.Println("API call was not successful:", res.StatusMessage)
+    return
+  }
 
-	fmt.Println("Status Code:", res.StatusCode)
-	fmt.Println("Status Message:", res.StatusMessage)
-	fmt.Println("Json:", res.Json)
-	fmt.Println("Body:", string(res.Body))
+  fmt.Println("Status Code:", res.StatusCode)
+  fmt.Println("Status Message:", res.StatusMessage)
+  fmt.Println("Json:", res.Json)
+  fmt.Println("Body:", string(res.Body))
 }
 ```
 
@@ -159,52 +159,52 @@ Body: {
 package main
 
 import (
-	"bytes"
-	"encoding/json"
-	"fmt"
-	"io"
-	"net/http"
+  "bytes"
+  "encoding/json"
+  "fmt"
+  "io"
+  "net/http"
 )
 
 type Post struct {
-	Title  string `json:"title"`
-	Body   string `json:"body"`
-	UserID int    `json:"userId"`
+  Title  string `json:"title"`
+  Body   string `json:"body"`
+  UserID int    `json:"userId"`
 }
 
 func main() {
-	postData := Post{
-		Title:  "New Post",
-		Body:   "This is a test post",
-		UserID: 1,
-	}
+  postData := Post{
+    Title:  "New Post",
+    Body:   "This is a test post",
+    UserID: 1,
+  }
 
-	jsonData, err := json.Marshal(postData)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  jsonData, err := json.Marshal(postData)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	url := "https://jsonplaceholder.typicode.com/posts"
-	res, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	defer res.Body.Close()
+  url := "https://jsonplaceholder.typicode.com/posts"
+  res, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
 
-	if res.StatusCode != http.StatusCreated {
-		fmt.Println("Request failed with status:", res.Status)
-		return
-	}
+  if res.StatusCode != http.StatusCreated {
+    fmt.Println("Request failed with status:", res.Status)
+    return
+  }
 
-	jsonString, err := io.ReadAll(res.Body)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  jsonString, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	fmt.Println(string(jsonString))
+  fmt.Println(string(jsonString))
 }
 ```
 
@@ -225,58 +225,58 @@ func main() {
 package main
 
 import (
-	"bytes"
-	"encoding/json"
-	"fmt"
-	"io"
-	"net/http"
-	"time"
+  "bytes"
+  "encoding/json"
+  "fmt"
+  "io"
+  "net/http"
+  "time"
 )
 
 type Post struct {
-	Title  string `json:"title"`
-	Body   string `json:"body"`
-	UserID int    `json:"userId"`
+  Title  string `json:"title"`
+  Body   string `json:"body"`
+  UserID int    `json:"userId"`
 }
 
 func main() {
-	url := "https://jsonplaceholder.typicode.com/posts"
+  url := "https://jsonplaceholder.typicode.com/posts"
 
-	postData := Post{
-		Title:  "Advanced Post",
-		Body:   "This is an advanced test post",
-		UserID: 1,
-	}
+  postData := Post{
+    Title:  "Advanced Post",
+    Body:   "This is an advanced test post",
+    UserID: 1,
+  }
 
-	jsonData, err := json.Marshal(postData)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  jsonData, err := json.Marshal(postData)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	client := &http.Client{Timeout: 10 * time.Second}
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
-	if err != nil {
-		fmt.Println("Error creating request:", err)
-		return
-	}
+  client := &http.Client{Timeout: 10 * time.Second}
+  req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
+  if err != nil {
+    fmt.Println("Error creating request:", err)
+    return
+  }
 
-	req.Header.Set("Content-Type", "application/json")
+  req.Header.Set("Content-Type", "application/json")
 
-	resp, err := client.Do(req)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	defer resp.Body.Close()
+  resp, err := client.Do(req)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer resp.Body.Close()
 
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  body, err := io.ReadAll(resp.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	fmt.Println(string(body))
+  fmt.Println(string(body))
 }
 ```
 
@@ -297,43 +297,43 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"time"
+  "fmt"
+  "time"
 
-	"github.com/riturajshakti/apicall"
+  "github.com/riturajshakti/apicall"
 )
 
 type Post struct {
-	Title  string `json:"title"`
-	Body   string `json:"body"`
-	UserID int    `json:"userId"`
+  Title  string `json:"title"`
+  Body   string `json:"body"`
+  UserID int    `json:"userId"`
 }
 
 func main() {
-	postData := Post{
-		Title:  "Advanced Post",
-		Body:   "This is an advanced test post",
-		UserID: 1,
-	}
+  postData := Post{
+    Title:  "Advanced Post",
+    Body:   "This is an advanced test post",
+    UserID: 1,
+  }
 
-	res, err := apicall.ApiCall(&apicall.Request{
-		Url:     "https://jsonplaceholder.typicode.com/posts",
-		Json:    postData,
-		Method:  apicall.POST,
-		Timeout: 10 * time.Second,
-	})
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  res, err := apicall.ApiCall(&apicall.Request{
+    Url:     "https://jsonplaceholder.typicode.com/posts",
+    Json:    postData,
+    Method:  apicall.POST,
+    Timeout: 10 * time.Second,
+  })
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	if res.StatusCode != 201 {
-		fmt.Println("API call was not successful:", res.StatusMessage)
-		return
-	}
+  if res.StatusCode != 201 {
+    fmt.Println("API call was not successful:", res.StatusMessage)
+    return
+  }
 
-	fmt.Println("Json:", res.Json)
-	fmt.Println("Body:", string(res.Body))
+  fmt.Println("Json:", res.Json)
+  fmt.Println("Body:", string(res.Body))
 }
 ```
 
@@ -357,63 +357,63 @@ Body: {
 package main
 
 import (
-	"bytes"
-	"fmt"
-	"io"
-	"mime/multipart"
-	"net/http"
-	"os"
+  "bytes"
+  "fmt"
+  "io"
+  "mime/multipart"
+  "net/http"
+  "os"
 )
 
 func main() {
-	filePath := "file.txt"
+  filePath := "file.txt"
 
-	var requestBody bytes.Buffer
-	writer := multipart.NewWriter(&requestBody)
+  var requestBody bytes.Buffer
+  writer := multipart.NewWriter(&requestBody)
 
-	_ = writer.WriteField("name", "john")
-	_ = writer.WriteField("age", "20")
+  _ = writer.WriteField("name", "john")
+  _ = writer.WriteField("age", "20")
 
-	file, err := os.Open(filePath)
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
+  file, err := os.Open(filePath)
+  if err != nil {
+    fmt.Println("Error opening file:", err)
+    return
+  }
+  defer file.Close()
 
-	part, err := writer.CreateFormFile("file", filePath)
-	if err != nil {
-		fmt.Println("Error creating form file:", err)
-		return
-	}
+  part, err := writer.CreateFormFile("file", filePath)
+  if err != nil {
+    fmt.Println("Error creating form file:", err)
+    return
+  }
 
-	_, err = io.Copy(part, file)
-	if err != nil {
-		fmt.Println("Error copying file content:", err)
-		return
-	}
+  _, err = io.Copy(part, file)
+  if err != nil {
+    fmt.Println("Error copying file content:", err)
+    return
+  }
 
-	writer.Close()
+  writer.Close()
 
-	res, err := http.Post(
-		"https://api.escuelajs.co/api/v1/files/upload",
-		writer.FormDataContentType(),
-		&requestBody,
-	)
-	if err != nil {
-		fmt.Println("Error sending request:", err)
-		return
-	}
-	defer res.Body.Close()
+  res, err := http.Post(
+    "https://api.escuelajs.co/api/v1/files/upload",
+    writer.FormDataContentType(),
+    &requestBody,
+  )
+  if err != nil {
+    fmt.Println("Error sending request:", err)
+    return
+  }
+  defer res.Body.Close()
 
-	responseBody, err := io.ReadAll(res.Body)
-	if err != nil {
-		fmt.Println("Error reading response body:", err)
-		return
-	}
+  responseBody, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println("Error reading response body:", err)
+    return
+  }
 
-	fmt.Println("Response Status:", res.Status)
-	fmt.Println("Response Body:", string(responseBody))
+  fmt.Println("Response Status:", res.Status)
+  fmt.Println("Response Body:", string(responseBody))
 }
 ```
 
@@ -430,81 +430,81 @@ Response Body: {"originalname":"file.txt","filename":"d6f2.txt","location":"http
 package main
 
 import (
-	"bytes"
-	"fmt"
-	"io"
-	"mime/multipart"
-	"net/http"
-	"os"
+  "bytes"
+  "fmt"
+  "io"
+  "mime/multipart"
+  "net/http"
+  "os"
 )
 
 func main() {
-	filePath := "file.txt"
+  filePath := "file.txt"
 
-	var requestBody bytes.Buffer
-	writer := multipart.NewWriter(&requestBody)
+  var requestBody bytes.Buffer
+  writer := multipart.NewWriter(&requestBody)
 
-	err := writer.WriteField("name", "john")
-	if err != nil {
-		fmt.Println("Error writing name field:", err)
-		return
-	}
+  err := writer.WriteField("name", "john")
+  if err != nil {
+    fmt.Println("Error writing name field:", err)
+    return
+  }
 
-	err = writer.WriteField("age", "20")
-	if err != nil {
-		fmt.Println("Error writing age field:", err)
-		return
-	}
+  err = writer.WriteField("age", "20")
+  if err != nil {
+    fmt.Println("Error writing age field:", err)
+    return
+  }
 
-	file, err := os.Open(filePath)
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
+  file, err := os.Open(filePath)
+  if err != nil {
+    fmt.Println("Error opening file:", err)
+    return
+  }
+  defer file.Close()
 
-	part, err := writer.CreateFormFile("file", filePath)
-	if err != nil {
-		fmt.Println("Error creating form file:", err)
-		return
-	}
+  part, err := writer.CreateFormFile("file", filePath)
+  if err != nil {
+    fmt.Println("Error creating form file:", err)
+    return
+  }
 
-	_, err = io.Copy(part, file)
-	if err != nil {
-		fmt.Println("Error copying file content:", err)
-		return
-	}
+  _, err = io.Copy(part, file)
+  if err != nil {
+    fmt.Println("Error copying file content:", err)
+    return
+  }
 
-	writer.Close()
-	req, err := http.NewRequest("POST", "https://api.escuelajs.co/api/v1/files/upload", &requestBody)
-	if err != nil {
-		fmt.Println("Error creating request:", err)
-		return
-	}
+  writer.Close()
+  req, err := http.NewRequest("POST", "https://api.escuelajs.co/api/v1/files/upload", &requestBody)
+  if err != nil {
+    fmt.Println("Error creating request:", err)
+    return
+  }
 
-	req.Header.Set("Content-Type", writer.FormDataContentType())
+  req.Header.Set("Content-Type", writer.FormDataContentType())
 
-	client := &http.Client{}
-	res, err := client.Do(req)
-	if err != nil {
-		fmt.Println("Error sending request:", err)
-		return
-	}
-	defer res.Body.Close()
+  client := &http.Client{}
+  res, err := client.Do(req)
+  if err != nil {
+    fmt.Println("Error sending request:", err)
+    return
+  }
+  defer res.Body.Close()
 
-	if res.StatusCode != 201 {
-		fmt.Println("Error:", res.Status)
-		return
-	}
+  if res.StatusCode != 201 {
+    fmt.Println("Error:", res.Status)
+    return
+  }
 
-	responseBody, err := io.ReadAll(res.Body)
-	if err != nil {
-		fmt.Println("Error reading response body:", err)
-		return
-	}
+  responseBody, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println("Error reading response body:", err)
+    return
+  }
 
-	fmt.Println("Response Status:", res.Status)
-	fmt.Println("Response Body:", string(responseBody))
+  fmt.Println("Response Status:", res.Status)
+  fmt.Println("Response Body:", string(responseBody))
 }
 ```
 
@@ -521,38 +521,38 @@ Response Body: {"originalname":"file.txt","filename":"10622.txt","location":"htt
 package main
 
 import (
-	"fmt"
+  "fmt"
 
-	"github.com/riturajshakti/apicall"
+  "github.com/riturajshakti/apicall"
 )
 
 func main() {
-	res, err := apicall.ApiCall(&apicall.Request{
-		Url:    "https://api.escuelajs.co/api/v1/files/upload",
-		Method: "POST",
-		FormData: &apicall.FormData{
-			Files: map[string]any{
-				"file": "file.txt",
-				// "songs": []string{"music1.mp3", "music2.mp3"},
-			},
-			Fields: map[string]string{
-				"name": "John",
-				"age":  "20",
-			},
-		},
-	})
+  res, err := apicall.ApiCall(&apicall.Request{
+    Url:    "https://api.escuelajs.co/api/v1/files/upload",
+    Method: "POST",
+    FormData: &apicall.FormData{
+      Files: map[string]any{
+        "file": "file.txt",
+        // "songs": []string{"music1.mp3", "music2.mp3"},
+      },
+      Fields: map[string]string{
+        "name": "John",
+        "age":  "20",
+      },
+    },
+  })
 
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	if !res.Ok {
-		fmt.Println(res.StatusMessage)
-		return
-	}
+  if !res.Ok {
+    fmt.Println(res.StatusMessage)
+    return
+  }
 
-	fmt.Println(res.Json)
+  fmt.Println(res.Json)
 }
 ```
 
@@ -570,91 +570,91 @@ map[filename:32106.txt location:https://api.escuelajs.co/api/v1/files/32106.txt 
 package main
 
 import (
-	"bytes"
-	"fmt"
-	"io"
-	"mime/multipart"
-	"net/http"
-	"os"
+  "bytes"
+  "fmt"
+  "io"
+  "mime/multipart"
+  "net/http"
+  "os"
 )
 
 type ProgressReader struct {
-	io.Reader
-	Total    int64
-	Uploaded int64
+  io.Reader
+  Total    int64
+  Uploaded int64
 }
 
 func (p *ProgressReader) Read(buf []byte) (int, error) {
-	n, err := p.Reader.Read(buf)
-	if n > 0 {
-		p.Uploaded += int64(n)
-		percentage := (float64(p.Uploaded) / float64(p.Total)) * 100
-		fmt.Printf("\rUploading: %.2f%%", percentage)
-	}
-	return n, err
+  n, err := p.Reader.Read(buf)
+  if n > 0 {
+    p.Uploaded += int64(n)
+    percentage := (float64(p.Uploaded) / float64(p.Total)) * 100
+    fmt.Printf("\rUploading: %.2f%%", percentage)
+  }
+  return n, err
 }
 
 func main() {
-	filePath := "file.txt"
+  filePath := "file.txt"
 
-	var requestBody bytes.Buffer
-	writer := multipart.NewWriter(&requestBody)
+  var requestBody bytes.Buffer
+  writer := multipart.NewWriter(&requestBody)
 
-	_ = writer.WriteField("name", "john")
-	_ = writer.WriteField("age", "20")
+  _ = writer.WriteField("name", "john")
+  _ = writer.WriteField("age", "20")
 
-	file, err := os.Open(filePath)
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
+  file, err := os.Open(filePath)
+  if err != nil {
+    fmt.Println("Error opening file:", err)
+    return
+  }
+  defer file.Close()
 
-	part, err := writer.CreateFormFile("file", filePath)
-	if err != nil {
-		fmt.Println("Error creating form file:", err)
-		return
-	}
+  part, err := writer.CreateFormFile("file", filePath)
+  if err != nil {
+    fmt.Println("Error creating form file:", err)
+    return
+  }
 
-	_, err = io.Copy(part, file)
-	if err != nil {
-		fmt.Println("Error copying file content:", err)
-		return
-	}
+  _, err = io.Copy(part, file)
+  if err != nil {
+    fmt.Println("Error copying file content:", err)
+    return
+  }
 
-	writer.Close()
+  writer.Close()
 
-	progressReader := &ProgressReader{
-		Reader: bytes.NewReader(requestBody.Bytes()),
-		Total:  int64(requestBody.Len()),
-	}
+  progressReader := &ProgressReader{
+    Reader: bytes.NewReader(requestBody.Bytes()),
+    Total:  int64(requestBody.Len()),
+  }
 
-	req, err := http.NewRequest("POST", "https://api.escuelajs.co/api/v1/files/upload", progressReader)
-	if err != nil {
-		fmt.Println("Error creating request:", err)
-		return
-	}
+  req, err := http.NewRequest("POST", "https://api.escuelajs.co/api/v1/files/upload", progressReader)
+  if err != nil {
+    fmt.Println("Error creating request:", err)
+    return
+  }
 
-	req.Header.Set("Content-Type", writer.FormDataContentType())
+  req.Header.Set("Content-Type", writer.FormDataContentType())
 
-	client := &http.Client{}
-	res, err := client.Do(req)
-	if err != nil {
-		fmt.Println("Error sending request:", err)
-		return
-	}
-	defer res.Body.Close()
+  client := &http.Client{}
+  res, err := client.Do(req)
+  if err != nil {
+    fmt.Println("Error sending request:", err)
+    return
+  }
+  defer res.Body.Close()
 
-	fmt.Println("\nUpload complete!")
+  fmt.Println("\nUpload complete!")
 
-	responseBody, err := io.ReadAll(res.Body)
-	if err != nil {
-		fmt.Println("Error reading response body:", err)
-		return
-	}
+  responseBody, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println("Error reading response body:", err)
+    return
+  }
 
-	fmt.Println("Response Status:", res.Status)
-	fmt.Println("Response Body:", string(responseBody))
+  fmt.Println("Response Status:", res.Status)
+  fmt.Println("Response Body:", string(responseBody))
 }
 ```
 
@@ -673,44 +673,44 @@ Response Body: {"originalname":"file.txt","filename":"97ed.txt","location":"http
 package main
 
 import (
-	"fmt"
+  "fmt"
 
-	"github.com/riturajshakti/apicall"
+  "github.com/riturajshakti/apicall"
 )
 
 func main() {
-	res, err := apicall.ApiCall(&apicall.Request{
-		Url:    "https://api.escuelajs.co/api/v1/files/upload",
-		Method: "POST",
-		FormData: &apicall.FormData{
-			Files: map[string]any{
-				"file": "file.txt",
-			},
-			Fields: map[string]string{
-				"name": "John",
-				"age":  "20",
-			},
-		},
-		OnProgress: func(uploaded int64, total int64) {
-			percentage := (float64(uploaded) / float64(total)) * 100
-			fmt.Printf("\rUploading: %.2f%%", percentage)
-			if uploaded == total {
-				fmt.Println("\nUpload complete!")
-			}
-		},
-	})
+  res, err := apicall.ApiCall(&apicall.Request{
+    Url:    "https://api.escuelajs.co/api/v1/files/upload",
+    Method: "POST",
+    FormData: &apicall.FormData{
+      Files: map[string]any{
+        "file": "file.txt",
+      },
+      Fields: map[string]string{
+        "name": "John",
+        "age":  "20",
+      },
+    },
+    OnProgress: func(uploaded int64, total int64) {
+      percentage := (float64(uploaded) / float64(total)) * 100
+      fmt.Printf("\rUploading: %.2f%%", percentage)
+      if uploaded == total {
+        fmt.Println("\nUpload complete!")
+      }
+    },
+  })
 
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	if !res.Ok {
-		fmt.Println(res.StatusMessage)
-		return
-	}
+  if !res.Ok {
+    fmt.Println(res.StatusMessage)
+    return
+  }
 
-	fmt.Println(res.Json)
+  fmt.Println(res.Json)
 }
 ```
 
@@ -730,58 +730,58 @@ map[filename:2f13.txt location:https://api.escuelajs.co/api/v1/files/2f13.txt or
 package main
 
 import (
-	"bytes"
-	"encoding/json"
-	"fmt"
-	"io"
-	"net/http"
-	"time"
+  "bytes"
+  "encoding/json"
+  "fmt"
+  "io"
+  "net/http"
+  "time"
 )
 
 type Post struct {
-	Title  string `json:"title"`
-	Body   string `json:"body"`
-	UserID int    `json:"userId"`
+  Title  string `json:"title"`
+  Body   string `json:"body"`
+  UserID int    `json:"userId"`
 }
 
 func main() {
-	url := "https://jsonplaceholder.typicode.com/posts"
+  url := "https://jsonplaceholder.typicode.com/posts"
 
-	postData := Post{
-		Title:  "Advanced Post",
-		Body:   "This is an advanced test post",
-		UserID: 1,
-	}
+  postData := Post{
+    Title:  "Advanced Post",
+    Body:   "This is an advanced test post",
+    UserID: 1,
+  }
 
-	jsonData, err := json.Marshal(postData)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  jsonData, err := json.Marshal(postData)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	client := &http.Client{Timeout: 10 * time.Second}
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
-	if err != nil {
-		fmt.Println("Error creating request:", err)
-		return
-	}
+  client := &http.Client{Timeout: 10 * time.Second}
+  req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
+  if err != nil {
+    fmt.Println("Error creating request:", err)
+    return
+  }
 
-	req.Header.Set("Content-Type", "application/json")
+  req.Header.Set("Content-Type", "application/json")
 
-	resp, err := client.Do(req)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	defer resp.Body.Close()
+  resp, err := client.Do(req)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer resp.Body.Close()
 
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  body, err := io.ReadAll(resp.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	fmt.Println(string(body))
+  fmt.Println(string(body))
 }
 ```
 
@@ -802,46 +802,46 @@ func main() {
 package main
 
 import (
-	"encoding/json"
-	"fmt"
+  "encoding/json"
+  "fmt"
 
-	"github.com/riturajshakti/apicall"
+  "github.com/riturajshakti/apicall"
 )
 
 type Post struct {
-	Title  string `json:"title"`
-	Body   string `json:"body"`
-	UserID int    `json:"userId"`
+  Title  string `json:"title"`
+  Body   string `json:"body"`
+  UserID int    `json:"userId"`
 }
 
 func main() {
-	postData := Post{
-		Title:  "Advanced Post",
-		Body:   "This is an advanced test post",
-		UserID: 1,
-	}
+  postData := Post{
+    Title:  "Advanced Post",
+    Body:   "This is an advanced test post",
+    UserID: 1,
+  }
 
-	jsonString, _ := json.Marshal(postData)
+  jsonString, _ := json.Marshal(postData)
 
-	res, err := apicall.ApiCall(&apicall.Request{
-		Url:    "https://jsonplaceholder.typicode.com/posts",
-		Method: apicall.POST,
-		Headers: map[string]string{
-			"Content-Type": "application/json",
-		},
-		Body: jsonString,
-	})
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  res, err := apicall.ApiCall(&apicall.Request{
+    Url:    "https://jsonplaceholder.typicode.com/posts",
+    Method: apicall.POST,
+    Headers: map[string]string{
+      "Content-Type": "application/json",
+    },
+    Body: jsonString,
+  })
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	if res.StatusCode != 201 {
-		fmt.Println("API call was not successful:", res.StatusMessage)
-		return
-	}
+  if res.StatusCode != 201 {
+    fmt.Println("API call was not successful:", res.StatusMessage)
+    return
+  }
 
-	fmt.Println("Json:", res.Json)
+  fmt.Println("Json:", res.Json)
 }
 ```
 
@@ -859,45 +859,45 @@ Json: map[body:This is an advanced test post id:101 title:Advanced Post userId:1
 package main
 
 import (
-	"fmt"
-	"io"
-	"net/http"
-	"net/url"
+  "fmt"
+  "io"
+  "net/http"
+  "net/url"
 )
 
 func main() {
-	baseURL := "https://jsonplaceholder.typicode.com/posts"
+  baseURL := "https://jsonplaceholder.typicode.com/posts"
 
-	parsedURL, err := url.Parse(baseURL)
-	if err != nil {
-		fmt.Println("Error parsing URL:", err)
-		return
-	}
+  parsedURL, err := url.Parse(baseURL)
+  if err != nil {
+    fmt.Println("Error parsing URL:", err)
+    return
+  }
 
-	query := parsedURL.Query()
-	query.Set("limit", "5")
-	query.Set("page", "2")
-	parsedURL.RawQuery = query.Encode()
+  query := parsedURL.Query()
+  query.Set("limit", "5")
+  query.Set("page", "2")
+  parsedURL.RawQuery = query.Encode()
 
-	res, err := http.Get(parsedURL.String())
-	if err != nil {
-		fmt.Println("Error sending request:", err)
-		return
-	}
-	defer res.Body.Close()
+  res, err := http.Get(parsedURL.String())
+  if err != nil {
+    fmt.Println("Error sending request:", err)
+    return
+  }
+  defer res.Body.Close()
 
-	if res.StatusCode != http.StatusOK {
-		fmt.Println("Request failed with status:", res.Status)
-		return
-	}
+  if res.StatusCode != http.StatusOK {
+    fmt.Println("Request failed with status:", res.Status)
+    return
+  }
 
-	jsonString, err := io.ReadAll(res.Body)
-	if err != nil {
-		fmt.Println("Error reading response:", err)
-		return
-	}
+  jsonString, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println("Error reading response:", err)
+    return
+  }
 
-	fmt.Println(string(jsonString))
+  fmt.Println(string(jsonString))
 }
 ```
 
@@ -945,32 +945,32 @@ velit et doloremque molestiae"
 package main
 
 import (
-	"fmt"
+  "fmt"
 
-	"github.com/riturajshakti/apicall"
+  "github.com/riturajshakti/apicall"
 )
 
 func main() {
-	res, err := apicall.ApiCall(&apicall.Request{
-		Url: "https://jsonplaceholder.typicode.com/posts/1",
-		Query: map[string]string{
-			"limit": "10",
-			"page":  "2",
-		},
-	})
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  res, err := apicall.ApiCall(&apicall.Request{
+    Url: "https://jsonplaceholder.typicode.com/posts/1",
+    Query: map[string]string{
+      "limit": "10",
+      "page":  "2",
+    },
+  })
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	if res.StatusCode != 200 {
-		fmt.Println("API call was not successful:", res.StatusMessage)
-		return
-	}
+  if res.StatusCode != 200 {
+    fmt.Println("API call was not successful:", res.StatusMessage)
+    return
+  }
 
-	fmt.Println("Status Code:", res.StatusCode)
-	fmt.Println("Status Message:", res.StatusMessage)
-	fmt.Println("Json:", string(res.Body))
+  fmt.Println("Status Code:", res.StatusCode)
+  fmt.Println("Status Message:", res.StatusMessage)
+  fmt.Println("Json:", string(res.Body))
 }
 ```
 
@@ -995,35 +995,35 @@ Json: {
 package main
 
 import (
-	"fmt"
-	"io"
-	"net/http"
+  "fmt"
+  "io"
+  "net/http"
 )
 
 func main() {
-	url := "https://jsonplaceholder.typicode.com/posts/1"
-	res, err := http.Get(url)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	defer res.Body.Close()
+  url := "https://jsonplaceholder.typicode.com/posts/1"
+  res, err := http.Get(url)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
 
-	if res.StatusCode != http.StatusOK {
-		fmt.Println("Request failed with status:", res.Status)
-		return
-	}
+  if res.StatusCode != http.StatusOK {
+    fmt.Println("Request failed with status:", res.Status)
+    return
+  }
 
-	jsonString, err := io.ReadAll(res.Body)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  jsonString, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	fmt.Println("Status Code:", res.StatusCode)
-	fmt.Println("Status Message:", res.Status)
-	fmt.Println("Headers:", res.Header)
-	fmt.Println(string(jsonString))
+  fmt.Println("Status Code:", res.StatusCode)
+  fmt.Println("Status Message:", res.Status)
+  fmt.Println("Headers:", res.Header)
+  fmt.Println(string(jsonString))
 }
 ```
 
@@ -1048,31 +1048,31 @@ Headers: map[Access-Control-Allow-Credentials:[true] Age:[26585] Alt-Svc:[h3=":4
 package main
 
 import (
-	"fmt"
+  "fmt"
 
-	"github.com/riturajshakti/apicall"
+  "github.com/riturajshakti/apicall"
 )
 
 func main() {
-	res, err := apicall.ApiCall(&apicall.Request{
-		Url: "https://jsonplaceholder.typicode.com/posts/1",
-	})
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+  res, err := apicall.ApiCall(&apicall.Request{
+    Url: "https://jsonplaceholder.typicode.com/posts/1",
+  })
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
 
-	if !res.Ok {
-		fmt.Println("API call was not successful:", res.StatusMessage)
-		return
-	}
+  if !res.Ok {
+    fmt.Println("API call was not successful:", res.StatusMessage)
+    return
+  }
 
-	fmt.Println("Ok:", res.Ok)
-	fmt.Println("Status Code:", res.StatusCode)
-	fmt.Println("Status Message:", res.StatusMessage)
-	fmt.Println("Headers:", res.Headers)
-	fmt.Println("Json:", res.Json)
-	fmt.Println("Body:", string(res.Body))
+  fmt.Println("Ok:", res.Ok)
+  fmt.Println("Status Code:", res.StatusCode)
+  fmt.Println("Status Message:", res.StatusMessage)
+  fmt.Println("Headers:", res.Headers)
+  fmt.Println("Json:", res.Json)
+  fmt.Println("Body:", string(res.Body))
 }
 ```
 
@@ -1103,51 +1103,51 @@ Body: {
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"net/http"
-	"os"
+  "bufio"
+  "fmt"
+  "net/http"
+  "os"
 )
 
 func main() {
-	url := "https://sse-fake.andros.dev/events/"
+  url := "https://sse-fake.andros.dev/events/"
 
-	resp, err := http.Get(url)
-	if err != nil {
-		fmt.Println("Error connecting to SSE:", err)
-		return
-	}
-	defer resp.Body.Close()
+  resp, err := http.Get(url)
+  if err != nil {
+    fmt.Println("Error connecting to SSE:", err)
+    return
+  }
+  defer resp.Body.Close()
 
-	if resp.StatusCode != http.StatusOK {
-		fmt.Println("Unexpected response status:", resp.Status)
-		return
-	}
+  if resp.StatusCode != http.StatusOK {
+    fmt.Println("Unexpected response status:", resp.Status)
+    return
+  }
 
-	fmt.Println("Connected to SSE stream...")
+  fmt.Println("Connected to SSE stream...")
 
-	// Create a buffered scanner to read the SSE stream line by line
-	scanner := bufio.NewScanner(resp.Body)
-	for scanner.Scan() {
-		line := scanner.Text()
+  // Create a buffered scanner to read the SSE stream line by line
+  scanner := bufio.NewScanner(resp.Body)
+  for scanner.Scan() {
+    line := scanner.Text()
 
-		// Ignore empty lines (SSE events can be multi-line)
-		if line == "" {
-			continue
-		}
+    // Ignore empty lines (SSE events can be multi-line)
+    if line == "" {
+      continue
+    }
 
-		fmt.Println("Event:", line)
+    fmt.Println("Event:", line)
 
-		if line == "exit" {
-			fmt.Println("Exiting SSE listener...")
-			break
-		}
-	}
+    if line == "exit" {
+      fmt.Println("Exiting SSE listener...")
+      break
+    }
+  }
 
-	if err := scanner.Err(); err != nil {
-		fmt.Println("Error reading SSE stream:", err)
-		os.Exit(1)
-	}
+  if err := scanner.Err(); err != nil {
+    fmt.Println("Error reading SSE stream:", err)
+    os.Exit(1)
+  }
 }
 ```
 
@@ -1181,52 +1181,52 @@ Event: data: {"action": "New message", "name": "Christopher", "text": "Televisio
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"net/http"
-	"strings"
+  "bufio"
+  "fmt"
+  "net/http"
+  "strings"
 )
 
 func main() {
-	url := "https://sse-fake.andros.dev/events/"
+  url := "https://sse-fake.andros.dev/events/"
 
-	resp, err := http.Get(url)
-	if err != nil {
-		fmt.Println("Error connecting to SSE:", err)
-		return
-	}
-	defer resp.Body.Close()
+  resp, err := http.Get(url)
+  if err != nil {
+    fmt.Println("Error connecting to SSE:", err)
+    return
+  }
+  defer resp.Body.Close()
 
-	if resp.StatusCode != http.StatusOK {
-		fmt.Println("Unexpected response status:", resp.Status)
-		return
-	}
+  if resp.StatusCode != http.StatusOK {
+    fmt.Println("Unexpected response status:", resp.Status)
+    return
+  }
 
-	fmt.Println("Connected to SSE stream...")
+  fmt.Println("Connected to SSE stream...")
 
-	// Create a buffered reader to read the SSE stream
-	reader := bufio.NewReader(resp.Body)
-	for {
-		// Read the next event (usually ending with a newline or empty line)
-		line, err := reader.ReadString('\n')
-		if err != nil {
-			fmt.Println("Error reading SSE stream:", err)
-			break
-		}
+  // Create a buffered reader to read the SSE stream
+  reader := bufio.NewReader(resp.Body)
+  for {
+    // Read the next event (usually ending with a newline or empty line)
+    line, err := reader.ReadString('\n')
+    if err != nil {
+      fmt.Println("Error reading SSE stream:", err)
+      break
+    }
 
-		// Ignore empty lines
-		line = strings.TrimSpace(line)
-		if line == "" {
-			continue
-		}
+    // Ignore empty lines
+    line = strings.TrimSpace(line)
+    if line == "" {
+      continue
+    }
 
-		fmt.Println("Event:", line)
+    fmt.Println("Event:", line)
 
-		if line == "exit" {
-			fmt.Println("Exiting SSE listener...")
-			break
-		}
-	}
+    if line == "exit" {
+      fmt.Println("Exiting SSE listener...")
+      break
+    }
+  }
 }
 ```
 
@@ -1262,51 +1262,51 @@ never American political."}
 package main
 
 import (
-	"fmt"
-	"log"
-	"time"
+  "fmt"
+  "log"
+  "time"
 
-	"github.com/gorilla/websocket"
+  "github.com/gorilla/websocket"
 )
 
 func main() {
-	url := "wss://echo.websocket.org/"
-	conn, _, err := websocket.DefaultDialer.Dial(url, nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer conn.Close()
+  url := "wss://echo.websocket.org/"
+  conn, _, err := websocket.DefaultDialer.Dial(url, nil)
+  if err != nil {
+    log.Fatal(err)
+  }
+  defer conn.Close()
 
-	count := 0
+  count := 0
 
-	go func() {
-		for {
-			messageType, p, err := conn.ReadMessage()
-			if err != nil {
-				log.Println(err)
-				return
-			}
+  go func() {
+    for {
+      messageType, p, err := conn.ReadMessage()
+      if err != nil {
+        log.Println(err)
+        return
+      }
 
-			if messageType == websocket.TextMessage {
-				message := string(p)
-				log.Printf("Received message: %s\n", message)
-			}
-		}
-	}()
+      if messageType == websocket.TextMessage {
+        message := string(p)
+        log.Printf("Received message: %s\n", message)
+      }
+    }
+  }()
 
-	ticker := time.NewTicker(5 * time.Second)
-	defer ticker.Stop()
+  ticker := time.NewTicker(5 * time.Second)
+  defer ticker.Stop()
 
-	for range ticker.C {
-		msg := fmt.Sprintf("Count is %d", count)
-		err := conn.WriteMessage(websocket.TextMessage, []byte(msg))
-		if err != nil {
-			log.Println(err)
-			return
-		}
-		log.Println("Sent message: " + msg)
-		count++
-	}
+  for range ticker.C {
+    msg := fmt.Sprintf("Count is %d", count)
+    err := conn.WriteMessage(websocket.TextMessage, []byte(msg))
+    if err != nil {
+      log.Println(err)
+      return
+    }
+    log.Println("Sent message: " + msg)
+    count++
+  }
 }
 ```
 
@@ -1331,50 +1331,50 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"log"
-	"time"
+  "fmt"
+  "log"
+  "time"
 
-	"golang.org/x/net/websocket"
+  "golang.org/x/net/websocket"
 )
 
 func main() {
-	url := "wss://echo.websocket.org/"
-	conn, err := websocket.Dial(url, "", "http://localhost/")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer conn.Close()
+  url := "wss://echo.websocket.org/"
+  conn, err := websocket.Dial(url, "", "http://localhost/")
+  if err != nil {
+    log.Fatal(err)
+  }
+  defer conn.Close()
 
-	count := 0
+  count := 0
 
-	// Goroutine for receiving messages
-	go func() {
-		for {
-			var msg string
-			err := websocket.Message.Receive(conn, &msg)
-			if err != nil {
-				log.Println(err)
-				return
-			}
-			log.Printf("Received message: %s\n", msg)
-		}
-	}()
+  // Goroutine for receiving messages
+  go func() {
+    for {
+      var msg string
+      err := websocket.Message.Receive(conn, &msg)
+      if err != nil {
+        log.Println(err)
+        return
+      }
+      log.Printf("Received message: %s\n", msg)
+    }
+  }()
 
-	// Send message every 5 seconds
-	ticker := time.NewTicker(5 * time.Second)
-	defer ticker.Stop()
+  // Send message every 5 seconds
+  ticker := time.NewTicker(5 * time.Second)
+  defer ticker.Stop()
 
-	for range ticker.C {
-		msg := fmt.Sprintf("Count is %d", count)
-		err := websocket.Message.Send(conn, msg)
-		if err != nil {
-			log.Println(err)
-			return
-		}
-		log.Println("Sent message: " + msg)
-		count++
-	}
+  for range ticker.C {
+    msg := fmt.Sprintf("Count is %d", count)
+    err := websocket.Message.Send(conn, msg)
+    if err != nil {
+      log.Println(err)
+      return
+    }
+    log.Println("Sent message: " + msg)
+    count++
+  }
 }
 ```
 

@@ -4,7 +4,7 @@
 
 ```go
 func main() {
-	panic("exiting")
+  panic("exiting")
 }
 ```
 
@@ -22,12 +22,12 @@ main.main()
 
 ```go
 func main() {
-	defer func() {
-		if r := recover(); r != nil {
-			fmt.Println("Recovered here:", r)
-		}
-	}()
-	panic("exiting")
+  defer func() {
+    if r := recover(); r != nil {
+      fmt.Println("Recovered here:", r)
+    }
+  }()
+  panic("exiting")
 }
 ```
 

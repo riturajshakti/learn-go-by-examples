@@ -23,28 +23,28 @@ fmt.Println(x)
 package main
 
 import (
-	"fmt"
+  "fmt"
 )
 
 func main() {
-	fmt.Println(Min(2, 4, -6, 6))
+  fmt.Println(Min(2, 4, -6, 6))
 }
 
 type Ordered interface {
-	~int | ~int8 | ~int16 | ~int32 | ~int64 |
-		~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~uintptr |
-		~float32 | ~float64 |
-		~string
+  ~int | ~int8 | ~int16 | ~int32 | ~int64 |
+    ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~uintptr |
+    ~float32 | ~float64 |
+    ~string
 }
 
 func Min[T Ordered](values ...T) T {
-	min := values[0]
-	for _, e := range values {
-		if e < min {
-			min = e
-		}
-	}
-	return min
+  min := values[0]
+  for _, e := range values {
+    if e < min {
+      min = e
+    }
+  }
+  return min
 }
 ```
 
@@ -68,23 +68,23 @@ go get golang.org/x/exp/constraints
 package main
 
 import (
-	"fmt"
+  "fmt"
 
-	"golang.org/x/exp/constraints"
+  "golang.org/x/exp/constraints"
 )
 
 func main() {
-	fmt.Println(Max(2, 44, -6, 6.8))
+  fmt.Println(Max(2, 44, -6, 6.8))
 }
 
 func Max[T constraints.Ordered](values ...T) T {
-	max := values[0]
-	for _, e := range values {
-		if e > max {
-			max = e
-		}
-	}
-	return max
+  max := values[0]
+  for _, e := range values {
+    if e > max {
+      max = e
+    }
+  }
+  return max
 }
 ```
 

@@ -7,11 +7,11 @@
 package utils
 
 func Sum(values ...int) int {
-	total := 0
-	for _, e := range values {
-		total += e
-	}
-	return total
+  total := 0
+  for _, e := range values {
+    total += e
+  }
+  return total
 }
 
 
@@ -19,14 +19,14 @@ func Sum(values ...int) int {
 package main
 
 import (
-	"fmt"
+  "fmt"
 
-	"github.com/riturajshakti/go-examples/utils"
+  "github.com/riturajshakti/go-examples/utils"
 )
 
 func main() {
-	sum := utils.Sum(1, 2, 3, 4, 5)
-	fmt.Println("Sum =", sum)
+  sum := utils.Sum(1, 2, 3, 4, 5)
+  fmt.Println("Sum =", sum)
 }
 ```
 

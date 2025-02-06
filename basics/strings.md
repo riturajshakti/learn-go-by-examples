@@ -322,7 +322,7 @@ I am Rituraj. My age is 30, My country is India
 
 ```go
 s := "The quick brown fox jumps over the lazy dog"
-	fmt.Println(s)
+  fmt.Println(s)
 fmt.Println("Index of 'fox':", strings.Index(s, "fox"))
 ```
 

@@ -24,9 +24,9 @@ go get github.com/gomarkdown/markdown
 package main
 
 import (
-	"fmt"
+  "fmt"
 
-	"github.com/gomarkdown/markdown"
+  "github.com/gomarkdown/markdown"
 )
 
 var md string = `
@@ -51,17 +51,17 @@ Here you will learn go
 package main
 
 import (
-	"fmt"
+  "fmt"
 )
 
 func main() {
-	fmt.Println("Hello World!")
+  fmt.Println("Hello World!")
 }
 ` + "```"
 
 func main() {
-	html := markdown.ToHTML([]byte(md), nil, nil)
-	fmt.Println(string(html))
+  html := markdown.ToHTML([]byte(md), nil, nil)
+  fmt.Println(string(html))
 }
 ```
 

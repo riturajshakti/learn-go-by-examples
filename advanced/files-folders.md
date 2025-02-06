@@ -6,18 +6,18 @@
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	content, err := os.ReadFile("example.txt")
-	if err != nil {
-		fmt.Println("Error reading file:", err)
-		return
-	}
+  content, err := os.ReadFile("example.txt")
+  if err != nil {
+    fmt.Println("Error reading file:", err)
+    return
+  }
 
-	fmt.Println(string(content))
+  fmt.Println(string(content))
 }
 ```
 
@@ -33,29 +33,29 @@ Hello Golang
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"os"
+  "bufio"
+  "fmt"
+  "os"
 )
 
 func main() {
-	filePath := "example.txt"
+  filePath := "example.txt"
 
-	file, err := os.Open(filePath)
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
+  file, err := os.Open(filePath)
+  if err != nil {
+    fmt.Println("Error opening file:", err)
+    return
+  }
+  defer file.Close()
 
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-	}
+  scanner := bufio.NewScanner(file)
+  for scanner.Scan() {
+    fmt.Println(scanner.Text())
+  }
 
-	if err := scanner.Err(); err != nil {
-		fmt.Println("Error reading file:", err)
-	}
+  if err := scanner.Err(); err != nil {
+    fmt.Println("Error reading file:", err)
+  }
 }
 ```
 
@@ -72,34 +72,34 @@ How are you?
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	file, err := os.Open("temp.pdf")
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
+  file, err := os.Open("temp.pdf")
+  if err != nil {
+    fmt.Println("Error opening file:", err)
+    return
+  }
+  defer file.Close()
 
-	fileInfo, err := file.Stat()
-	if err != nil {
-		fmt.Println("Error getting file info:", err)
-		return
-	}
-	fileSize := fileInfo.Size()
+  fileInfo, err := file.Stat()
+  if err != nil {
+    fmt.Println("Error getting file info:", err)
+    return
+  }
+  fileSize := fileInfo.Size()
 
-	data := make([]byte, fileSize)
+  data := make([]byte, fileSize)
 
-	_, err = file.Read(data)
-	if err != nil {
-		fmt.Println("Error reading file:", err)
-		return
-	}
+  _, err = file.Read(data)
+  if err != nil {
+    fmt.Println("Error reading file:", err)
+    return
+  }
 
-	fmt.Printf("Binary data (hex): %x\n", data)
+  fmt.Printf("Binary data (hex): %x\n", data)
 }
 ```
 
@@ -115,33 +115,33 @@ Binary data (hex): 255044462d312e340a25e2e3cfd30a352030206f626a0a3c3c0a2f6361203
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	file, err := os.Open("temp.pdf")
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
+  file, err := os.Open("temp.pdf")
+  if err != nil {
+    fmt.Println("Error opening file:", err)
+    return
+  }
+  defer file.Close()
 
-	chunkSize := 64
-	buffer := make([]byte, chunkSize)
+  chunkSize := 64
+  buffer := make([]byte, chunkSize)
 
-	for {
-		bytesRead, err := file.Read(buffer)
-		if err != nil {
-			if err.Error() == "EOF" {
-				break
-			}
-			fmt.Println("Error reading file:", err)
-			return
-		}
+  for {
+    bytesRead, err := file.Read(buffer)
+    if err != nil {
+      if err.Error() == "EOF" {
+        break
+      }
+      fmt.Println("Error reading file:", err)
+      return
+    }
 
-		fmt.Printf("Read %d bytes: %x\n", bytesRead, buffer[:bytesRead])
-	}
+    fmt.Printf("Read %d bytes: %x\n", bytesRead, buffer[:bytesRead])
+  }
 }
 ```
 
@@ -160,17 +160,17 @@ Read 51 bytes: 4146373835413643433039443644364630453141393236423e5d0a3e3e0a73746
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	_, err := os.Stat("file.txt")
-	if err != nil {
-		fmt.Println("File does not exists")
-	} else {
-		fmt.Println("File exists")
-	}
+  _, err := os.Stat("file.txt")
+  if err != nil {
+    fmt.Println("File does not exists")
+  } else {
+    fmt.Println("File exists")
+  }
 }
 ```
 
@@ -188,25 +188,25 @@ File exists
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	file, err := os.Create("example.txt")
-	if err != nil {
-		fmt.Println("Error creating file:", err)
-		return
-	}
-	defer file.Close()
+  file, err := os.Create("example.txt")
+  if err != nil {
+    fmt.Println("Error creating file:", err)
+    return
+  }
+  defer file.Close()
 
-	_, err = file.WriteString("Hello, World!\n")
-	if err != nil {
-		fmt.Println("Error writing to file:", err)
-		return
-	}
+  _, err = file.WriteString("Hello, World!\n")
+  if err != nil {
+    fmt.Println("Error writing to file:", err)
+    return
+  }
 
-	fmt.Println("File created successfully")
+  fmt.Println("File created successfully")
 }
 ```
 
@@ -222,25 +222,25 @@ File created successfully
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	file, err := os.Create("example.bin")
-	if err != nil {
-		fmt.Println("Error creating file:", err)
-		return
-	}
-	defer file.Close()
+  file, err := os.Create("example.bin")
+  if err != nil {
+    fmt.Println("Error creating file:", err)
+    return
+  }
+  defer file.Close()
 
-	_, err = file.Write([]byte("Hello, World!\n"))
-	if err != nil {
-		fmt.Println("Error writing to file:", err)
-		return
-	}
+  _, err = file.Write([]byte("Hello, World!\n"))
+  if err != nil {
+    fmt.Println("Error writing to file:", err)
+    return
+  }
 
-	fmt.Println("File created successfully")
+  fmt.Println("File created successfully")
 }
 ```
 
@@ -256,27 +256,27 @@ File created successfully
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	data := []byte("Bye Bye\n")
+  data := []byte("Bye Bye\n")
 
-	file, err := os.OpenFile("example.bin", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
+  file, err := os.OpenFile("example.bin", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+  if err != nil {
+    fmt.Println("Error opening file:", err)
+    return
+  }
+  defer file.Close()
 
-	_, err = file.Write(data)
-	if err != nil {
-		fmt.Println("Error writing to file:", err)
-		return
-	}
+  _, err = file.Write(data)
+  if err != nil {
+    fmt.Println("Error writing to file:", err)
+    return
+  }
 
-	fmt.Println("Binary data appended successfully")
+  fmt.Println("Binary data appended successfully")
 }
 ```
 
@@ -292,37 +292,37 @@ Binary data appended successfully
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	filename := "example.bin"
-	data := []byte("Nice to see you!")
-	index := int64(14) // The position to write at
+  filename := "example.bin"
+  data := []byte("Nice to see you!")
+  index := int64(14) // The position to write at
 
-	file, err := os.OpenFile(filename, os.O_RDWR|os.O_CREATE, 0644)
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer file.Close()
+  file, err := os.OpenFile(filename, os.O_RDWR|os.O_CREATE, 0644)
+  if err != nil {
+    fmt.Println("Error opening file:", err)
+    return
+  }
+  defer file.Close()
 
-	// Move the file pointer to the desired index
-	_, err = file.Seek(index, 0)
-	if err != nil {
-		fmt.Println("Error seeking in file:", err)
-		return
-	}
+  // Move the file pointer to the desired index
+  _, err = file.Seek(index, 0)
+  if err != nil {
+    fmt.Println("Error seeking in file:", err)
+    return
+  }
 
-	// Write data at the specified position
-	_, err = file.Write(data)
-	if err != nil {
-		fmt.Println("Error writing to file:", err)
-		return
-	}
+  // Write data at the specified position
+  _, err = file.Write(data)
+  if err != nil {
+    fmt.Println("Error writing to file:", err)
+    return
+  }
 
-	fmt.Println("Binary data written at index", index, "successfully")
+  fmt.Println("Binary data written at index", index, "successfully")
 }
 ```
 
@@ -338,39 +338,39 @@ Binary data written at index 14 successfully
 package main
 
 import (
-	"fmt"
-	"io"
-	"os"
+  "fmt"
+  "io"
+  "os"
 )
 
 func main() {
-	srcFile := "source.txt"
-	destFile := "destination.txt"
+  srcFile := "source.txt"
+  destFile := "destination.txt"
 
-	// Open the source file
-	source, err := os.Open(srcFile)
-	if err != nil {
-		fmt.Println("Error opening source file:", err)
-		return
-	}
-	defer source.Close()
+  // Open the source file
+  source, err := os.Open(srcFile)
+  if err != nil {
+    fmt.Println("Error opening source file:", err)
+    return
+  }
+  defer source.Close()
 
-	// Create the destination file
-	destination, err := os.Create(destFile)
-	if err != nil {
-		fmt.Println("Error creating destination file:", err)
-		return
-	}
-	defer destination.Close()
+  // Create the destination file
+  destination, err := os.Create(destFile)
+  if err != nil {
+    fmt.Println("Error creating destination file:", err)
+    return
+  }
+  defer destination.Close()
 
-	// Copy the contents from source to destination
-	_, err = io.Copy(destination, source)
-	if err != nil {
-		fmt.Println("Error copying file:", err)
-		return
-	}
+  // Copy the contents from source to destination
+  _, err = io.Copy(destination, source)
+  if err != nil {
+    fmt.Println("Error copying file:", err)
+    return
+  }
 
-	fmt.Println("File copied successfully")
+  fmt.Println("File copied successfully")
 }
 ```
 
@@ -386,18 +386,18 @@ File copied successfully
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	err := os.Remove("source.txt")
-	if err != nil {
-		fmt.Println("Error deleting file:", err)
-		return
-	}
+  err := os.Remove("source.txt")
+  if err != nil {
+    fmt.Println("Error deleting file:", err)
+    return
+  }
 
-	fmt.Println("File deleted successfully")
+  fmt.Println("File deleted successfully")
 }
 ```
 
@@ -413,21 +413,21 @@ File deleted successfully
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	oldName := "old.txt"
-	newName := "new.txt"
+  oldName := "old.txt"
+  newName := "new.txt"
 
-	err := os.Rename(oldName, newName)
-	if err != nil {
-		fmt.Println("Error renaming file:", err)
-		return
-	}
+  err := os.Rename(oldName, newName)
+  if err != nil {
+    fmt.Println("Error renaming file:", err)
+    return
+  }
 
-	fmt.Println("File renamed successfully")
+  fmt.Println("File renamed successfully")
 }
 ```
 
@@ -443,29 +443,29 @@ File renamed successfully
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	oldPath := "new.txt"
-	newPath := "temp/new.txt"
+  oldPath := "new.txt"
+  newPath := "temp/new.txt"
 
-	// Ensure the target directory exists
-	err := os.MkdirAll("temp", os.ModePerm)
-	if err != nil {
-		fmt.Println("Error creating directory:", err)
-		return
-	}
+  // Ensure the target directory exists
+  err := os.MkdirAll("temp", os.ModePerm)
+  if err != nil {
+    fmt.Println("Error creating directory:", err)
+    return
+  }
 
-	// Move (rename) the file
-	err = os.Rename(oldPath, newPath)
-	if err != nil {
-		fmt.Println("Error moving file:", err)
-		return
-	}
+  // Move (rename) the file
+  err = os.Rename(oldPath, newPath)
+  if err != nil {
+    fmt.Println("Error moving file:", err)
+    return
+  }
 
-	fmt.Println("Files moved successfully")
+  fmt.Println("Files moved successfully")
 }
 ```
 
@@ -481,21 +481,21 @@ Files moved successfully
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	path := "temp/category1/test"
+  path := "temp/category1/test"
 
-	// Create the folder and subdirectory
-	err := os.MkdirAll(path, os.ModePerm)
-	if err != nil {
-		fmt.Println("Error creating directory:", err)
-		return
-	}
+  // Create the folder and subdirectory
+  err := os.MkdirAll(path, os.ModePerm)
+  if err != nil {
+    fmt.Println("Error creating directory:", err)
+    return
+  }
 
-	fmt.Println("Directory created successfully")
+  fmt.Println("Directory created successfully")
 }
 ```
 
@@ -511,19 +511,19 @@ Directory created successfully
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	// Remove the folder and its contents
-	err := os.RemoveAll("temp")
-	if err != nil {
-		fmt.Println("Error deleting folder:", err)
-		return
-	}
+  // Remove the folder and its contents
+  err := os.RemoveAll("temp")
+  if err != nil {
+    fmt.Println("Error deleting folder:", err)
+    return
+  }
 
-	fmt.Println("Folder deleted successfully")
+  fmt.Println("Folder deleted successfully")
 }
 ```
 
@@ -539,21 +539,21 @@ Folder deleted successfully
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	oldPath := "temp"
-	newPath := "old"
+  oldPath := "temp"
+  newPath := "old"
 
-	err := os.Rename(oldPath, newPath)
-	if err != nil {
-		fmt.Println("Error renaming folder:", err)
-		return
-	}
+  err := os.Rename(oldPath, newPath)
+  if err != nil {
+    fmt.Println("Error renaming folder:", err)
+    return
+  }
 
-	fmt.Println("Folder renamed successfully")
+  fmt.Println("Folder renamed successfully")
 }
 ```
 
@@ -569,22 +569,22 @@ Folder renamed successfully
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	info, err := os.Stat("temp")
-	if os.IsNotExist(err) {
-		fmt.Println("Folder does not exist")
-		return
-	}
+  info, err := os.Stat("temp")
+  if os.IsNotExist(err) {
+    fmt.Println("Folder does not exist")
+    return
+  }
 
-	if info.IsDir() {
-		fmt.Println("Folder exists")
-	} else {
-		fmt.Println("The path exists, but it is not a folder")
-	}
+  if info.IsDir() {
+    fmt.Println("Folder exists")
+  } else {
+    fmt.Println("The path exists, but it is not a folder")
+  }
 }
 ```
 
@@ -602,26 +602,26 @@ Folder does not exist
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	// Read the directory contents
-	entries, err := os.ReadDir("temp")
-	if err != nil {
-		fmt.Println("Error reading directory:", err)
-		return
-	}
+  // Read the directory contents
+  entries, err := os.ReadDir("temp")
+  if err != nil {
+    fmt.Println("Error reading directory:", err)
+    return
+  }
 
-	// Iterate through the directory entries
-	for _, entry := range entries {
-		if entry.IsDir() {
-			fmt.Println("Directory:", entry.Name())
-		} else {
-			fmt.Println("File:", entry.Name())
-		}
-	}
+  // Iterate through the directory entries
+  for _, entry := range entries {
+    if entry.IsDir() {
+      fmt.Println("Directory:", entry.Name())
+    } else {
+      fmt.Println("File:", entry.Name())
+    }
+  }
 }
 ```
 
@@ -638,33 +638,33 @@ Directory: test
 package main
 
 import (
-	"fmt"
-	"os"
-	"path/filepath"
+  "fmt"
+  "os"
+  "path/filepath"
 )
 
 func main() {
-	dir := "temp"
+  dir := "temp"
 
-	// Walk through the directory recursively
-	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			fmt.Println("Error accessing", path, err)
-			return err
-		}
+  // Walk through the directory recursively
+  err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
+    if err != nil {
+      fmt.Println("Error accessing", path, err)
+      return err
+    }
 
-		if info.IsDir() {
-			fmt.Println("Directory:", path)
-		} else {
-			fmt.Println("File:", path)
-		}
+    if info.IsDir() {
+      fmt.Println("Directory:", path)
+    } else {
+      fmt.Println("File:", path)
+    }
 
-		return nil
-	})
+    return nil
+  })
 
-	if err != nil {
-		fmt.Println("Error walking the path", err)
-	}
+  if err != nil {
+    fmt.Println("Error walking the path", err)
+  }
 }
 ```
 

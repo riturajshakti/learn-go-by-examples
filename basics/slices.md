@@ -159,26 +159,26 @@ for i, e := range list {
 
 ```go
 func main() {
-	list1 := []string{"ABC", "DEF", "GHI", "JKL"}
-	list2 := []string{"ABC", "DEF", "GHI", "JKL"}
+  list1 := []string{"ABC", "DEF", "GHI", "JKL"}
+  list2 := []string{"ABC", "DEF", "GHI", "JKL"}
 
-	if isEqual(list1, list2) {
-		fmt.Println("list1 equals list2")
-	} else {
-		fmt.Println("list1 not equals list2")
-	}
+  if isEqual(list1, list2) {
+    fmt.Println("list1 equals list2")
+  } else {
+    fmt.Println("list1 not equals list2")
+  }
 }
 
 func isEqual[T comparable](list1, list2 []T) bool {
-	if len(list1) != len(list2) {
-		return false
-	}
-	for i := range len(list1) {
-		if list1[i] != list2[i] {
-			return false
-		}
-	}
-	return true
+  if len(list1) != len(list2) {
+    return false
+  }
+  for i := range len(list1) {
+    if list1[i] != list2[i] {
+      return false
+    }
+  }
+  return true
 }
 ```
 
@@ -497,23 +497,23 @@ fmt.Println(c)
 
 ```go
 func main() {
-	list := []int{1, 2, 1, 3, 2, 1, 4, 2, 1}
-	list = RemoveDuplicates(list)
-	fmt.Println(list)
+  list := []int{1, 2, 1, 3, 2, 1, 4, 2, 1}
+  list = RemoveDuplicates(list)
+  fmt.Println(list)
 }
 
 func RemoveDuplicates[T comparable](list []T) []T {
-	m := map[T]bool{}
-	for _, e := range list {
-		if _, ok := m[e]; !ok {
-			m[e] = true
-		}
-	}
-	s := []T{}
-	for k := range m {
-		s = append(s, k)
-	}
-	return s
+  m := map[T]bool{}
+  for _, e := range list {
+    if _, ok := m[e]; !ok {
+      m[e] = true
+    }
+  }
+  s := []T{}
+  for k := range m {
+    s = append(s, k)
+  }
+  return s
 }
 ```
 

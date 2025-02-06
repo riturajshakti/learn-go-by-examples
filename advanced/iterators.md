@@ -6,24 +6,24 @@
 package main
 
 import (
-	"fmt"
+  "fmt"
 )
 
 func main() {
-	s := []string{"red", "green", "blue"}
-	for i, e := range Backward(s) {
-		fmt.Println(i, e)
-	}
+  s := []string{"red", "green", "blue"}
+  for i, e := range Backward(s) {
+    fmt.Println(i, e)
+  }
 }
 
 func Backward[T any](s []T) func(func(int, T) bool) {
-	return func(yield func(int, T) bool) {
-		for i := len(s) - 1; i >= 0; i-- {
-			if !yield(i, s[i]) {
-				return
-			}
-		}
-	}
+  return func(yield func(int, T) bool) {
+    for i := len(s) - 1; i >= 0; i-- {
+      if !yield(i, s[i]) {
+        return
+      }
+    }
+  }
 }
 ```
 

@@ -4,16 +4,16 @@
 
 ```go
 type User struct {
-	Name string
-	Age  int
+  Name string
+  Age  int
 }
 
 func main() {
-	user1 := User{"John", 23}
-	fmt.Println(user1)
+  user1 := User{"John", 23}
+  fmt.Println(user1)
 
-	user2 := User{Name: "Alex", Age: 20}
-	fmt.Println(user2)
+  user2 := User{Name: "Alex", Age: 20}
+  fmt.Println(user2)
 }
 ```
 
@@ -54,21 +54,21 @@ fmt.Println(car)
 
 ```go
 type User struct {
-	Name string
-	Age  int
+  Name string
+  Age  int
 }
 
 func main() {
-	user := User{"John", 23}
-	fmt.Println(user)
+  user := User{"John", 23}
+  fmt.Println(user)
 
-	fieldName := "Age"
-	_, ok := reflect.TypeOf(user).FieldByName(fieldName)
-	if ok {
-		fmt.Println(fieldName, "exist in User struct")
-	} else {
-		fmt.Println(fieldName, "doesn't exist in User struct")
-	}
+  fieldName := "Age"
+  _, ok := reflect.TypeOf(user).FieldByName(fieldName)
+  if ok {
+    fmt.Println(fieldName, "exist in User struct")
+  } else {
+    fmt.Println(fieldName, "doesn't exist in User struct")
+  }
 }
 ```
 
@@ -83,24 +83,24 @@ Age exist in User struct
 
 ```go
 type User struct {
-	Name string `json:"name" xml:"NAME"`
-	Age  int    `json:"age" xml:"AGE"`
+  Name string `json:"name" xml:"NAME"`
+  Age  int    `json:"age" xml:"AGE"`
 }
 
 func main() {
-	user := User{"John", 23}
-	fmt.Println(user)
+  user := User{"John", 23}
+  fmt.Println(user)
 
-	userType := reflect.TypeOf(user)
-	for i := range userType.NumField() {
-		field := userType.Field(i)
-		fmt.Println("Field name:", field.Name)
-		fmt.Println("Field type:", field.Type)
-		fmt.Println("Field Tag:", field.Tag)
-		fmt.Println("Field Tag (json):", field.Tag.Get("json"))
-		fmt.Println("Field Tag (xml):", field.Tag.Get("xml"))
-		fmt.Println("---------")
-	}
+  userType := reflect.TypeOf(user)
+  for i := range userType.NumField() {
+    field := userType.Field(i)
+    fmt.Println("Field name:", field.Name)
+    fmt.Println("Field type:", field.Type)
+    fmt.Println("Field Tag:", field.Tag)
+    fmt.Println("Field Tag (json):", field.Tag.Get("json"))
+    fmt.Println("Field Tag (xml):", field.Tag.Get("xml"))
+    fmt.Println("---------")
+  }
 }
 ```
 
@@ -126,18 +126,18 @@ Field Tag (xml): AGE
 
 ```go
 type User struct {
-	Name string
-	Age  int
+  Name string
+  Age  int
 }
 
 func (user User) String() string {
-	return fmt.Sprintf("User{Name: %s, Age: %d}", user.Name, user.Age)
+  return fmt.Sprintf("User{Name: %s, Age: %d}", user.Name, user.Age)
 }
 
 func main() {
-	user := User{"John", 23}
-	fmt.Println(user.String())
-	fmt.Println(user)
+  user := User{"John", 23}
+  fmt.Println(user.String())
+  fmt.Println(user)
 }
 ```
 
@@ -152,21 +152,21 @@ User{Name: John, Age: 23}
 
 ```go
 type User struct {
-	Name    string
-	Age     int
-	Address Address
+  Name    string
+  Age     int
+  Address Address
 }
 
 type Address struct {
-	Line    string
-	City    string
-	Pin     string
-	Country string
+  Line    string
+  City    string
+  Pin     string
+  Country string
 }
 
 func main() {
-	user := User{"John", 23, Address{"B 123, Rd 23", "Rock Port", "123456", "UK"}}
-	fmt.Println(user)
+  user := User{"John", 23, Address{"B 123, Rd 23", "Rock Port", "123456", "UK"}}
+  fmt.Println(user)
 }
 ```
 

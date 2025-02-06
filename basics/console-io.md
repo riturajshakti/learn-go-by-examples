@@ -55,16 +55,16 @@ Hello world
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"os"
+  "bufio"
+  "fmt"
+  "os"
 )
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter a string: ")
-	s, _ := reader.ReadString('\n')
-	fmt.Println("String is:", s)
+  reader := bufio.NewReader(os.Stdin)
+  fmt.Print("Enter a string: ")
+  s, _ := reader.ReadString('\n')
+  fmt.Println("String is:", s)
 }
 ```
 

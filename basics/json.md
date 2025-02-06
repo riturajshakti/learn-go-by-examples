@@ -55,30 +55,30 @@ fmt.Println(string(str))
 
 ```go
 type Address struct {
-	Line    string `json:"line"`
-	Pin     string `json:"pin"`
-	City    string `json:"city"`
-	Country string `json:"country"`
+  Line    string `json:"line"`
+  Pin     string `json:"pin"`
+  City    string `json:"city"`
+  Country string `json:"country"`
 }
 
 func main() {
-	user := User{
-		Name:      "Jai",
-		Age:       34,
-		IsMarried: true,
-		Address: Address{
-			Line:    "Road No. 25",
-			Pin:     "123456",
-			City:    "Rock Port",
-			Country: "UK",
-		},
-	}
-	str, err := json.MarshalIndent(user, "", "  ")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fmt.Println(string(str))
+  user := User{
+    Name:      "Jai",
+    Age:       34,
+    IsMarried: true,
+    Address: Address{
+      Line:    "Road No. 25",
+      Pin:     "123456",
+      City:    "Rock Port",
+      Country: "UK",
+    },
+  }
+  str, err := json.MarshalIndent(user, "", "  ")
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(string(str))
 }
 ```
 
@@ -102,28 +102,28 @@ func main() {
 
 ```go
 type User struct {
-	Name      string  `json:"name"`
-	Age       int     `json:"age"`
-	IsMarried bool    `json:"isMarried"`
-	Address   Address `json:"address"`
+  Name      string  `json:"name"`
+  Age       int     `json:"age"`
+  IsMarried bool    `json:"isMarried"`
+  Address   Address `json:"address"`
 }
 
 type Address struct {
-	Line    string `json:"line"`
-	Pin     string `json:"pin"`
-	City    string `json:"city"`
-	Country string `json:"country"`
+  Line    string `json:"line"`
+  Pin     string `json:"pin"`
+  City    string `json:"city"`
+  Country string `json:"country"`
 }
 
 func main() {
-	var user User
-	str := `{"name":"Jai","age":34,"isMarried":true,"address":{"line":"Road No. 25","pin":"123456","city":"Rock Port","country":"UK"}}`
-	err := json.Unmarshal([]byte(str), &user)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fmt.Println(user)
+  var user User
+  str := `{"name":"Jai","age":34,"isMarried":true,"address":{"line":"Road No. 25","pin":"123456","city":"Rock Port","country":"UK"}}`
+  err := json.Unmarshal([]byte(str), &user)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(user)
 }
 ```
 
@@ -139,19 +139,19 @@ func main() {
 package main
 
 import (
-	"encoding/json"
-	"fmt"
+  "encoding/json"
+  "fmt"
 )
 
 func main() {
-	var user map[string]any
-	str := `{"name":"Jai","age":34,"isMarried":true,"address":{"line":"Road No. 25","pin":"123456","city":"Rock Port","country":"UK"}}`
-	err := json.Unmarshal([]byte(str), &user)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fmt.Println(user)
+  var user map[string]any
+  str := `{"name":"Jai","age":34,"isMarried":true,"address":{"line":"Road No. 25","pin":"123456","city":"Rock Port","country":"UK"}}`
+  err := json.Unmarshal([]byte(str), &user)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(user)
 }
 ```
 

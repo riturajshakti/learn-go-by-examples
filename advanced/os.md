@@ -8,9 +8,9 @@ package main
 import "os/exec"
 
 func main() {
-	// hibernate the system (for windows only)
-	cmd := exec.Command("shutdown", "/h")
-	cmd.Run()
+  // hibernate the system (for windows only)
+  cmd := exec.Command("shutdown", "/h")
+  cmd.Run()
 }
 ```
 
@@ -26,20 +26,20 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"os/exec"
+  "fmt"
+  "os/exec"
 )
 
 func main() {
-	cmd := exec.Command("powershell", "ls")
+  cmd := exec.Command("powershell", "ls")
 
-	output, err := cmd.Output()
-	if err != nil {
-		errorOutput := err.Error()
-		fmt.Println("Error executing command:", errorOutput)
-	}
+  output, err := cmd.Output()
+  if err != nil {
+    errorOutput := err.Error()
+    fmt.Println("Error executing command:", errorOutput)
+  }
 
-	fmt.Println("Output:", string(output))
+  fmt.Println("Output:", string(output))
 }
 ```
 
@@ -73,14 +73,14 @@ d-----        06-02-2025  02:19 PM                tmp
 package main
 
 import (
-	"fmt"
-	"os"
+  "fmt"
+  "os"
 )
 
 func main() {
-	fmt.Println("Going to exit")
-	os.Exit(1)
-	fmt.Println("This won't run")
+  fmt.Println("Going to exit")
+  os.Exit(1)
+  fmt.Println("This won't run")
 }
 ```
 
@@ -97,14 +97,14 @@ Going to exit
 package main
 
 import (
-	"fmt"
-	"log"
+  "fmt"
+  "log"
 )
 
 func main() {
-	fmt.Println("Going to exit")
-	log.Fatalf("")
-	fmt.Println("This won't run")
+  fmt.Println("Going to exit")
+  log.Fatalf("")
+  fmt.Println("This won't run")
 }
 ```
 
@@ -121,27 +121,27 @@ Going to exit
 package main
 
 import (
-	"fmt"
-	"os/exec"
+  "fmt"
+  "os/exec"
 )
 
 func main() {
-	// for windows only
-	cmd := exec.Command("notepad", "")
+  // for windows only
+  cmd := exec.Command("notepad", "")
 
-	err := cmd.Start()
-	if err != nil {
-		fmt.Println("Error starting the command:", err)
-		return
-	}
+  err := cmd.Start()
+  if err != nil {
+    fmt.Println("Error starting the command:", err)
+    return
+  }
 
-	err = cmd.Wait()
-	if err != nil {
-		fmt.Println("Error waiting for command to finish:", err)
-		return
-	}
+  err = cmd.Wait()
+  if err != nil {
+    fmt.Println("Error waiting for command to finish:", err)
+    return
+  }
 
-	fmt.Println("Command executed successfully")
+  fmt.Println("Command executed successfully")
 }
 ```
 
@@ -158,47 +158,47 @@ Command executed successfully
 package main
 
 import (
-	"fmt"
-	"log"
-	"net"
-	"runtime"
+  "fmt"
+  "log"
+  "net"
+  "runtime"
 )
 
 func main() {
-	// CPU information
-	numCPU := runtime.NumCPU()
-	fmt.Printf("CPU Information:\nCores: %d\n", numCPU)
+  // CPU information
+  numCPU := runtime.NumCPU()
+  fmt.Printf("CPU Information:\nCores: %d\n", numCPU)
 
-	// Memory information (only total and used from Go runtime)
-	var m runtime.MemStats
-	runtime.ReadMemStats(&m)
-	fmt.Printf("\nMemory Information:\nTotal: %d MB\nUsed: %d MB\n", m.Sys/1024/1024, m.Alloc/1024/1024)
+  // Memory information (only total and used from Go runtime)
+  var m runtime.MemStats
+  runtime.ReadMemStats(&m)
+  fmt.Printf("\nMemory Information:\nTotal: %d MB\nUsed: %d MB\n", m.Sys/1024/1024, m.Alloc/1024/1024)
 
-	// Platform Information
-	platform := runtime.GOOS
-	arch := runtime.GOARCH
-	fmt.Printf("\nPlatform Information:\nOS: %s\nArchitecture: %s\n", platform, arch)
+  // Platform Information
+  platform := runtime.GOOS
+  arch := runtime.GOARCH
+  fmt.Printf("\nPlatform Information:\nOS: %s\nArchitecture: %s\n", platform, arch)
 
-	// Network Interface information
-	fmt.Println("\nNetwork Interface Information:")
-	interfaces, err := net.Interfaces()
-	if err != nil {
-		log.Fatal("Error getting network interfaces:", err)
-	}
+  // Network Interface information
+  fmt.Println("\nNetwork Interface Information:")
+  interfaces, err := net.Interfaces()
+  if err != nil {
+    log.Fatal("Error getting network interfaces:", err)
+  }
 
-	for _, iface := range interfaces {
-		// IP addresses for each interface
-		addrs, err := iface.Addrs()
-		if err != nil {
-			log.Println("Error getting IP addresses:", err)
-			continue
-		}
+  for _, iface := range interfaces {
+    // IP addresses for each interface
+    addrs, err := iface.Addrs()
+    if err != nil {
+      log.Println("Error getting IP addresses:", err)
+      continue
+    }
 
-		fmt.Printf("Interface: %s\n", iface.Name)
-		for _, addr := range addrs {
-			fmt.Printf("  IP Address: %s\n", addr.String())
-		}
-	}
+    fmt.Printf("Interface: %s\n", iface.Name)
+    for _, addr := range addrs {
+      fmt.Printf("  IP Address: %s\n", addr.String())
+    }
+  }
 }
 ```
 
