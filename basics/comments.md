@@ -14,7 +14,5 @@
 */
 ```
 
-|  |  |  |
 | --- | --- | --- |
 | < Previous Page | [Home Page](../README.md) | [Next Page >](./console-io.md) |
-|  |  |  |
