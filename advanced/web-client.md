@@ -1393,7 +1393,6 @@ func main() {
 ...
 ```
 
-|  |  |  |
-| --- | --- | --- |
+
 | [< Previous Page](../basics/oops.md) | [Home Page](../README.md) | [Next Page >](./files-folders.md) |
-|  |  |  |
+|---|---|---|

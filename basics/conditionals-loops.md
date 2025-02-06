@@ -124,7 +124,5 @@ for i := range 3 {
 2
 ```
 
-|  |  |  |
-| --- | --- | --- |
 | [< Previous Page](./datetime.md) | [Home Page](../README.md) | [Next Page >](./functions.md) |
-|  |  |  |
+|---|---|---|

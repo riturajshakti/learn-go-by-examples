@@ -101,7 +101,5 @@ Value is: true
 ```
 
 
-|  |  |  |
-| --- | --- | --- |
 | [< Previous Page](./comments.md) | [Home Page](../README.md) | [Next Page >](./strings.md) |
-|  |  |  |
+|---|---|---|

@@ -325,7 +325,6 @@ func main() {
 Final count: 10
 ```
 
-|  |  |  |
-| --- | --- | --- |
+
 | [< Previous Page](./errors.md) | [Home Page](../README.md) | [Next Page >](./modules.md) |
-|  |  |  |
+|---|---|---|

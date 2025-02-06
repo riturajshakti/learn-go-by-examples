@@ -37,7 +37,6 @@ func main() {
 Recovered here: exiting
 ```
 
-|  |  |  |
-| --- | --- | --- |
+
 | [< Previous Page](./json.md) | [Home Page](../README.md) | [Next Page >](./concurrency.md) |
-|  |  |  |
+|---|---|---|

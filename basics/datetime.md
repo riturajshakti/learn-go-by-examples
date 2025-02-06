@@ -166,7 +166,6 @@ a - b:  63072000000
 In days:  730
 ```
 
-|  |  |  |
-| --- | --- | --- |
+
 | [< Previous Page](./operators.md) | [Home Page](../README.md) | [Next Page >](./conditionals-loops.md) |
-|  |  |  |
+|---|---|---|

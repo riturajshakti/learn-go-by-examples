@@ -182,7 +182,6 @@ fmt.Println(mixed)
 map[age:34 married:true name:John]
 ```
 
-|  |  |  |
-| --- | --- | --- |
+
 | [< Previous Page](./slices.md) | [Home Page](../README.md) | [Next Page >](./regex.md) |
-|  |  |  |
+|---|---|---|

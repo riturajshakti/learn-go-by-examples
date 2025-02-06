@@ -537,7 +537,6 @@ func Group[T any](list []T, rules map[string]func(e T, i int) bool) map[string][
 Grouped: map[even:[2 4 6 8] odd:[1 3 5 7]]
 ```
 
-|  |  |  |
-| --- | --- | --- |
+
 | [< Previous Page](./conditionals-loops.md) | [Home Page](../README.md) | [Next Page >](./json.md) |
-|  |  |  |
+|---|---|---|

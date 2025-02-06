@@ -45,7 +45,6 @@ Numbers: [1 2 3 4 5]
 Squares: [1 4 9 16 25]
 ```
 
-|  |  |  |
-| --- | --- | --- |
+
 | [< Previous Page](./iterators.md) | [Home Page](../README.md) | [Next Page >](./third-party-packages.md) |
-|  |  |  |
+|---|---|---|

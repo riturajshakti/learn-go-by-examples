@@ -36,7 +36,6 @@ func main() {
 Sum = 15
 ```
 
-|  |  |  |
-| --- | --- | --- |
+
 | [< Previous Page](./concurrency.md) | [Home Page](../README.md) | [Next Page >](./oops.md) |
-|  |  |  |
+|---|---|---|

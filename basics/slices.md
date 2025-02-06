@@ -554,7 +554,6 @@ fmt.Println(cloned)
 [1 2 3 4 5]
 ```
 
-|  |  |  |
-| --- | --- | --- |
+
 | [< Previous Page](./numbers.md) | [Home Page](../README.md) | [Next Page >](./maps.md) |
-|  |  |  |
+|---|---|---|

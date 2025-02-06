@@ -235,7 +235,5 @@ Interface: Loopback Pseudo-Interface 1
 ```
 
 
-|  |  |  |
-| --- | --- | --- |
 | [< Previous Page](./files-folders.md) | [Home Page](../README.md) | [Next Page >](./iterators.md) |
-|  |  |  |
+|---|---|---|
