@@ -1,6 +1,18 @@
-[Goto Home](../README.md)
+# Data Types
 
-# Printing the data type of a variable/constant
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Printing the data type of a variable/constant](#printing-the-data-type-of-a-variableconstant)
+- [Comparing the data type of variable in if-else/switch](#comparing-the-data-type-of-variable-in-if-elseswitch)
+- [Checking if a variable is an slice](#checking-if-a-variable-is-an-slice)
+- [Checking if a variable is a specific object](#checking-if-a-variable-is-a-specific-object)
+- [Checking if a variable is a function](#checking-if-a-variable-is-a-function)
+- [dynamic variables](#dynamic-variables)
+
+## Printing the data type of a variable/constant
 
 ```go
 x := []int{1, 2, 3}
@@ -15,9 +27,9 @@ x = [1 2 3]
 Typeof x = []int
 ```
 
-# Comparing the data type of variable in if-else/switch
+## Comparing the data type of variable in if-else/switch
 
-## Using switch
+### Using switch
 
 ```go
 var x any
@@ -38,7 +50,7 @@ default:
 x is slice of int
 ```
 
-## Using Ladder if-else
+### Using Ladder if-else
 
 ```go
 var x any
@@ -58,7 +70,7 @@ if _, ok := x.([]int); ok {
 x is slice of int
 ```
 
-# Checking if a variable is an slice
+## Checking if a variable is an slice
 
 ```go
 var x any
@@ -77,7 +89,7 @@ if kind == reflect.Slice {
 x is slice
 ```
 
-# Checking if a variable is a specific object
+## Checking if a variable is a specific object
 
 ```go
 type User struct {
@@ -99,7 +111,7 @@ if _, ok := x.(User); ok {
 x is User
 ```
 
-# Checking if a variable is a function
+## Checking if a variable is a function
 
 ```go
 var x any
@@ -120,7 +132,7 @@ if kind == reflect.Func {
 x is function
 ```
 
-# dynamic variables
+## dynamic variables
 
 ```go
 var x any
@@ -140,6 +152,7 @@ Test
 true
 ```
 
+# Navigations
 
 | [< Previous Page](./strings.md) | [Home Page](../README.md) | [Next Page >](./numbers.md) |
 |---|---|---|

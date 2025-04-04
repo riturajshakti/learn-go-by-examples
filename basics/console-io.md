@@ -1,6 +1,18 @@
-[Goto Home](../README.md)
+# Console IO
 
-# Print a string on console output
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Print a string on console output](#print-a-string-on-console-output)
+- [Print a formatted string on console output](#print-a-formatted-string-on-console-output)
+- [Print a string on console error](#print-a-string-on-console-error)
+- [Print a string without newline character at the end](#print-a-string-without-newline-character-at-the-end)
+- [Scan a string from console input](#scan-a-string-from-console-input)
+- [Scan numbers and bool from console input](#scan-numbers-and-bool-from-console-input)
+
+## Print a string on console output
 
 ```go
 fmt.Println("Hello world")
@@ -12,7 +24,7 @@ fmt.Println("Hello world")
 Hello world
 ```
 
-# Print a formatted string on console output
+## Print a formatted string on console output
 
 ```go
 married, age, name, score := false, 29, "raj", 78.50
@@ -25,7 +37,7 @@ fmt.Printf("Married: %t, Age: %d, Name: %s, Score: %g\n", married, age, name, sc
 Married: false, Age: 29, Name: raj, Score: 78.5
 ```
 
-# Print a string on console error
+## Print a string on console error
 
 ```go
 fmt.Fprintf(os.Stderr, "Error message\n")
@@ -37,7 +49,7 @@ fmt.Fprintf(os.Stderr, "Error message\n")
 Error message
 ```
 
-# Print a string without newline character at the end
+## Print a string without newline character at the end
 
 ```go
 fmt.Print("Hello world")
@@ -49,7 +61,7 @@ fmt.Print("Hello world")
 Hello world
 ```
 
-# Scan a string from console input
+## Scan a string from console input
 
 ```go
 package main
@@ -75,7 +87,7 @@ Enter a string: Hello world
 String is: Hello world
 ```
 
-# Scan numbers and bool from console input
+## Scan numbers and bool from console input
 
 ```go
 // Scanning numbers
@@ -100,6 +112,7 @@ Enter bool value: true
 Value is: true
 ```
 
+# Navigations
 
 | [< Previous Page](./comments.md) | [Home Page](../README.md) | [Next Page >](./strings.md) |
 |---|---|---|

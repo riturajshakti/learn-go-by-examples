@@ -1,6 +1,19 @@
-[Goto Home](../README.md)
+# JSON
 
-# converting a data into json string
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [converting a data into json string](#converting-a-data-into-json-string)
+- [converting a data into json string with specific indentation](#converting-a-data-into-json-string-with-specific-indentation)
+- [converting a typed data into json string](#converting-a-typed-data-into-json-string)
+- [converting a json string into typed data](#converting-a-json-string-into-typed-data)
+- [converting a json string into data](#converting-a-json-string-into-data)
+- [deep clone a data](#deep-clone-a-data)
+- [validating json string](#validating-json-string)
+
+## converting a data into json string
 
 ```go
 data := map[string]any{
@@ -23,7 +36,7 @@ fmt.Println(string(str))
 {"count":34,"currency":"usd","isLocal":false,"price":68.34}
 ```
 
-# converting a data into json string with specific indentation
+## converting a data into json string with specific indentation
 
 ```go
 data := map[string]any{
@@ -51,7 +64,7 @@ fmt.Println(string(str))
 }
 ```
 
-# converting a typed data into json string
+## converting a typed data into json string
 
 ```go
 type Address struct {
@@ -98,7 +111,7 @@ func main() {
 }
 ```
 
-# converting a json string into typed data
+## converting a json string into typed data
 
 ```go
 type User struct {
@@ -133,7 +146,7 @@ func main() {
 {Jai 34 true {Road No. 25 123456 Rock Port UK}}
 ```
 
-# converting a json string into data
+## converting a json string into data
 
 ```go
 package main
@@ -161,7 +174,7 @@ func main() {
 map[address:map[city:Rock Port country:UK line:Road No. 25 pin:123456] age:34 isMarried:true name:Jai]
 ```
 
-# deep clone a data
+## deep clone a data
 
 ```go
 data := map[string]any{
@@ -182,7 +195,7 @@ fmt.Println(cloned)
 map[count:34 currency:usd isLocal:false price:68.34]
 ```
 
-# validating json string
+## validating json string
 
 ```go
 var temp any
@@ -201,6 +214,7 @@ if err == nil {
 JSON string is valid
 ```
 
+# Navigations
 
 | [< Previous Page](./functions.md) | [Home Page](../README.md) | [Next Page >](./errors.md) |
 |---|---|---|

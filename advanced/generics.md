@@ -1,6 +1,13 @@
-[Goto Home](../README.md)
+# Generics
 
-# Basic Generic Function
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Basic Generic Function](#basic-generic-function)
+
+## Basic Generic Function
 
 ```go
 package main
@@ -45,6 +52,7 @@ Numbers: [1 2 3 4 5]
 Squares: [1 4 9 16 25]
 ```
 
+# Navigations
 
 | [< Previous Page](./iterators.md) | [Home Page](../README.md) | [Next Page >](./third-party-packages.md) |
 |---|---|---|

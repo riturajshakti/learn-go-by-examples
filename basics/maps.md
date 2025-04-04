@@ -1,6 +1,24 @@
-[Goto Home](../README.md)
+# Maps
 
-# Creating an empty map
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Creating an empty map](#creating-an-empty-map)
+- [Setting key-value pair on a map](#setting-key-value-pair-on-a-map)
+- [Checking if a key exist in a map](#checking-if-a-key-exist-in-a-map)
+- [Accessing value on specific key of map](#accessing-value-on-specific-key-of-map)
+- [Updating value on specific key of map](#updating-value-on-specific-key-of-map)
+- [Deleting a key-value pair from a map](#deleting-a-key-value-pair-from-a-map)
+- [Clearing the map](#clearing-the-map)
+- [Getting map size](#getting-map-size)
+- [Getting keys list of a map](#getting-keys-list-of-a-map)
+- [Getting values list of a map](#getting-values-list-of-a-map)
+- [Traversing a map](#traversing-a-map)
+- [Merging 2 maps into one](#merging-2-maps-into-one)
+
+## Creating an empty map
 
 ```go
 m := map[string]any{}
@@ -13,7 +31,7 @@ fmt.Println(m)
 map[]
 ```
 
-# Setting key-value pair on a map
+## Setting key-value pair on a map
 
 ```go
 m := map[string]any{}
@@ -28,7 +46,7 @@ fmt.Println(m)
 map[age:45 name:John]
 ```
 
-# Checking if a key exist in a map
+## Checking if a key exist in a map
 
 ```go
 m := map[string]any{"name": "John", "age": 34}
@@ -45,7 +63,7 @@ if _, exist := m["name"]; exist {
 name key exist in the map
 ```
 
-# Accessing value on specific key of map
+## Accessing value on specific key of map
 
 ```go
 m := map[string]any{"name": "John", "age": 34}
@@ -60,7 +78,7 @@ John
 34
 ```
 
-# Updating value on specific key of map
+## Updating value on specific key of map
 
 ```go
 m := map[string]any{"name": "John", "age": 34}
@@ -74,7 +92,7 @@ fmt.Println(m)
 map[age:34 name:Raj]
 ```
 
-# Deleting a key-value pair from a map
+## Deleting a key-value pair from a map
 
 ```go
 m := map[string]any{"name": "John", "age": 34}
@@ -88,7 +106,7 @@ fmt.Println(m)
 map[age:34]
 ```
 
-# Clearing the map
+## Clearing the map
 
 ```go
 m := map[string]any{"name": "John", "age": 34}
@@ -102,7 +120,7 @@ fmt.Println(m)
 map[]
 ```
 
-# Getting map size
+## Getting map size
 
 ```go
 m := map[string]any{"name": "John", "age": 34}
@@ -115,7 +133,7 @@ fmt.Println(len(m))
 2
 ```
 
-# Getting keys list of a map
+## Getting keys list of a map
 
 ```go
 m := map[string]any{"name": "John", "age": 34}
@@ -132,7 +150,7 @@ fmt.Println(keys)
 [name age]
 ```
 
-# Getting values list of a map
+## Getting values list of a map
 
 ```go
 m := map[string]any{"name": "John", "age": 34}
@@ -149,7 +167,7 @@ fmt.Println(values)
 [John 34]
 ```
 
-# Traversing a map
+## Traversing a map
 
 ```go
 m := map[string]any{"name": "John", "age": 34}
@@ -165,7 +183,7 @@ name John
 age 34
 ```
 
-# Merging 2 maps into one
+## Merging 2 maps into one
 
 ```go
 m := map[string]any{"name": "John", "age": 34}
@@ -182,6 +200,7 @@ fmt.Println(mixed)
 map[age:34 married:true name:John]
 ```
 
+# Navigations
 
 | [< Previous Page](./slices.md) | [Home Page](../README.md) | [Next Page >](./regex.md) |
 |---|---|---|

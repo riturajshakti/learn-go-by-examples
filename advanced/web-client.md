@@ -1,6 +1,21 @@
-[Goto Home](../README.md)
+# Third Party Packages
 
-# Basic GET api call which returns regular JSON
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Basic GET api call which returns regular JSON](#basic-get-api-call-which-returns-regular-json)
+- [POST/PUT/PATCH/DELETE api call with json payload](#postputpatchdelete-api-call-with-json-payload)
+- [Form data upload with files and string fields](#form-data-upload-with-files-and-string-fields)
+- [Print file upload percentage](#print-file-upload-percentage)
+- [Set Headers in request payload](#set-headers-in-request-payload)
+- [Set URL Search Params in request payload](#set-url-search-params-in-request-payload)
+- [Accessing Response Data](#accessing-response-data)
+- [Implementing Client Side SSE (Server Sent Events)](#implementing-client-side-sse-server-sent-events)
+- [Implementing Client Side Web Socket](#implementing-client-side-web-socket)
+
+## Basic GET api call which returns regular JSON
 
 **1st Method:** using http.Get
 
@@ -151,7 +166,7 @@ Body: {
 }
 ```
 
-# POST/PUT/PATCH/DELETE api call with json payload
+## POST/PUT/PATCH/DELETE api call with json payload
 
 **1st Method:** Using http.Post
 
@@ -349,7 +364,7 @@ Body: {
 }
 ```
 
-# Form data upload with files and string fields
+## Form data upload with files and string fields
 
 **1st Method:** Using http.Post
 
@@ -562,7 +577,7 @@ func main() {
 map[filename:32106.txt location:https://api.escuelajs.co/api/v1/files/32106.txt originalname:file.txt]
 ```
 
-# Print file upload percentage
+## Print file upload percentage
 
 **1st Method:** Using custom go code
 
@@ -722,7 +737,7 @@ Upload complete!
 map[filename:2f13.txt location:https://api.escuelajs.co/api/v1/files/2f13.txt originalname:file.txt]
 ```
 
-# Set Headers in request payload
+## Set Headers in request payload
 
 **1st Method:** Using custom go code
 
@@ -851,7 +866,7 @@ func main() {
 Json: map[body:This is an advanced test post id:101 title:Advanced Post userId:1]
 ```
 
-# Set URL Search Params in request payload
+## Set URL Search Params in request payload
 
 **1st Method:** Using http.Get
 
@@ -987,7 +1002,7 @@ Json: {
 }
 ```
 
-# Accessing Response Data
+## Accessing Response Data
 
 **1st Method:** Using custom go code
 
@@ -1095,7 +1110,7 @@ Body: {
 }
 ```
 
-# Implementing Client Side SSE (Server Sent Events)
+## Implementing Client Side SSE (Server Sent Events)
 
 **1st Method:** Using bufio.Scanner
 
@@ -1254,7 +1269,7 @@ Event: data: {"action": "New message", "name": "Vickie", "text": "Skill employee
 never American political."}
 ```
 
-# Implementing Client Side Web Socket
+## Implementing Client Side Web Socket
 
 **1st Method:** Using `github.com/gorilla/websocket`
 
@@ -1393,6 +1408,7 @@ func main() {
 ...
 ```
 
+# Navigations
 
 | [< Previous Page](../basics/oops.md) | [Home Page](../README.md) | [Next Page >](./files-folders.md) |
 |---|---|---|

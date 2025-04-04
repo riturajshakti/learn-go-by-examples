@@ -1,6 +1,26 @@
-[Goto Home](../README.md)
+# Numbers
 
-# Create a numeric variable of 1 byte
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Create a numeric variable of 1 byte](#create-a-numeric-variable-of-1-byte)
+- [finding min between many numbers](#finding-min-between-many-numbers)
+- [finding max between many numbers](#finding-max-between-many-numbers)
+- [rounding a number to integer](#rounding-a-number-to-integer)
+- [rounding a number to `n` digits after decimal points](#rounding-a-number-to-n-digits-after-decimal-points)
+- [finding random number from 0 to 1 (including 0 but excluding 1)](#finding-random-number-from-0-to-1-including-0-but-excluding-1)
+- [finding random integer from a to b](#finding-random-integer-from-a-to-b)
+- [floor of a number](#floor-of-a-number)
+- [ceiling of a number](#ceiling-of-a-number)
+- [finding a^b](#finding-ab)
+- [finding nth root of a number](#finding-nth-root-of-a-number)
+- [converting a number to string](#converting-a-number-to-string)
+- [converting a string to number](#converting-a-string-to-number)
+- [checking if a numeric string is invalid number (NaN)](#checking-if-a-numeric-string-is-invalid-number-nan)
+
+## Create a numeric variable of 1 byte
 
 ```go
 var x byte
@@ -15,7 +35,7 @@ fmt.Println(x)
 0
 ```
 
-# finding min between many numbers
+## finding min between many numbers
 
 **Using Custom Types**
 
@@ -54,7 +74,7 @@ func Min[T Ordered](values ...T) T {
 -6
 ```
 
-# finding max between many numbers
+## finding max between many numbers
 
 **Using package `constraints`**
 
@@ -94,7 +114,7 @@ func Max[T constraints.Ordered](values ...T) T {
 44
 ```
 
-# rounding a number to integer
+## rounding a number to integer
 
 ```go
 x := 45.678
@@ -107,7 +127,7 @@ fmt.Println(math.Round(x))
 46
 ```
 
-# rounding a number to `n` digits after decimal points
+## rounding a number to `n` digits after decimal points
 
 ```go
 x := 45.678
@@ -123,7 +143,7 @@ fmt.Println(rounded)
 45.68
 ```
 
-# finding random number from 0 to 1 (including 0 but excluding 1)
+## finding random number from 0 to 1 (including 0 but excluding 1)
 
 ```go
 for range 5 {
@@ -142,7 +162,7 @@ for range 5 {
 0.29721240683366645
 ```
 
-# finding random integer from a to b
+## finding random integer from a to b
 
 ```go
 a, b := 5, 10
@@ -158,7 +178,7 @@ for range 5 {
 7 5 8 8 10
 ```
 
-# floor of a number
+## floor of a number
 
 ```go
 n := 45.678
@@ -174,7 +194,7 @@ fmt.Println(math.Floor(n))
 -46
 ```
 
-# ceiling of a number
+## ceiling of a number
 
 ```go
 n := 45.678
@@ -190,7 +210,7 @@ fmt.Println(math.Ceil(n))
 -45
 ```
 
-# finding a^b
+## finding a^b
 
 ```go
 fmt.Println(math.Pow(2, 5))
@@ -202,7 +222,7 @@ fmt.Println(math.Pow(2, 5))
 32
 ```
 
-# finding nth root of a number
+## finding nth root of a number
 
 ```go
 x, n := 1024.0, 10.0
@@ -215,7 +235,7 @@ fmt.Println(math.Pow(x, 1/n))
 2
 ```
 
-# converting a number to string
+## converting a number to string
 
 ```go
 n := 45.6
@@ -229,7 +249,7 @@ fmt.Println(s)
 45.6
 ```
 
-# converting a string to number
+## converting a string to number
 
 ```go
 n := "45.6"
@@ -243,7 +263,7 @@ fmt.Println(s)
 45.6
 ```
 
-# checking if a numeric string is invalid number (NaN)
+## checking if a numeric string is invalid number (NaN)
 
 ```go
 n := "45.6abc"
@@ -261,6 +281,7 @@ if err != nil {
 45.6
 ```
 
+# Navigations
 
 | [< Previous Page](./data-types.md) | [Home Page](../README.md) | [Next Page >](./slices.md) |
 |---|---|---|

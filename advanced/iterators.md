@@ -1,6 +1,13 @@
-[Goto Home](../README.md)
-
 # Iterators
+
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Iterators](#iterators)
+
+## Iterators
 
 ```go
 package main
@@ -35,6 +42,7 @@ func Backward[T any](s []T) func(func(int, T) bool) {
 0 red
 ```
 
+# Navigations
 
 | [< Previous Page](./os.md) | [Home Page](../README.md) | [Next Page >](./generics.md) |
 |---|---|---|

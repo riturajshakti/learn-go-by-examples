@@ -1,6 +1,18 @@
-[Goto Home](../README.md)
+# Conditionals and Loops
 
-# Switch where multiple cases executes same statement
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Switch where multiple cases executes same statement](#switch-where-multiple-cases-executes-same-statement)
+- [Reverse for loop on numbers](#reverse-for-loop-on-numbers)
+- [do-while operations using while loop](#do-while-operations-using-while-loop)
+- [for-each loop on arrays/string](#for-each-loop-on-arraysstring)
+- [for-each loop on maps](#for-each-loop-on-maps)
+- [For loop on number](#for-loop-on-number)
+
+## Switch where multiple cases executes same statement
 
 ```go
 x := 3
@@ -18,7 +30,7 @@ default:
 x is either 1, 2 or 3
 ```
 
-# Reverse for loop on numbers
+## Reverse for loop on numbers
 
 ```go
 for i := 10; i > 0; i-- {
@@ -32,7 +44,7 @@ for i := 10; i > 0; i-- {
 10 9 8 7 6 5 4 3 2 1 
 ```
 
-# do-while operations using while loop
+## do-while operations using while loop
 
 ```go
 i := 1
@@ -51,7 +63,7 @@ for {
 1 2 3 
 ```
 
-# for-each loop on arrays/string
+## for-each loop on arrays/string
 
 For loop on slice
 
@@ -87,7 +99,7 @@ B
 C
 ```
 
-# for-each loop on maps
+## for-each loop on maps
 
 ```go
 m := map[string]any{
@@ -108,7 +120,7 @@ age 20
 married false
 ```
 
-# For loop on number
+## For loop on number
 
 ```go
 for i := range 3 {
@@ -123,6 +135,8 @@ for i := range 3 {
 1
 2
 ```
+
+# Navigations
 
 | [< Previous Page](./datetime.md) | [Home Page](../README.md) | [Next Page >](./functions.md) |
 |---|---|---|

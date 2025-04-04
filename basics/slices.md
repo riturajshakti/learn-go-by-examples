@@ -1,6 +1,41 @@
-[Goto Home](../README.md)
+# Slices / Arrays
 
-# List of dynamic data types
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [List of dynamic data types](#list-of-dynamic-data-types)
+- [Creating static list](#creating-static-list)
+- [Creating dynamic list](#creating-dynamic-list)
+- [Creating list for any type of map](#creating-list-for-any-type-of-map)
+- [Getting list size](#getting-list-size)
+- [Accessing list element at specific index](#accessing-list-element-at-specific-index)
+- [Updating list element at specific index](#updating-list-element-at-specific-index)
+- [Removing list element at specific index](#removing-list-element-at-specific-index)
+- [Traversing a list](#traversing-a-list)
+- [Comparing 2 lists based on their contents](#comparing-2-lists-based-on-their-contents)
+- [joining slice elements in a string](#joining-slice-elements-in-a-string)
+- [joining slice elements using custom string](#joining-slice-elements-using-custom-string)
+- [check if an element exist in an array](#check-if-an-element-exist-in-an-array)
+- [find element's index in an array](#find-elements-index-in-an-array)
+- [find element's index from last in a slice](#find-elements-index-from-last-in-a-slice)
+- [inserting elements in a slice from end](#inserting-elements-in-a-slice-from-end)
+- [inserting elements in a slice from start](#inserting-elements-in-a-slice-from-start)
+- [inserting elements in a slice at specific index](#inserting-elements-in-a-slice-at-specific-index)
+- [removing n number of elements in a slice at specific index](#removing-n-number-of-elements-in-a-slice-at-specific-index)
+- [removing an element from last in a slice](#removing-an-element-from-last-in-a-slice)
+- [reversing a slice](#reversing-a-slice)
+- [Clearing the list](#clearing-the-list)
+- [shuffle a list](#shuffle-a-list)
+- [Multi-dimensional slice (Nested slices)](#multi-dimensional-slice-nested-slices)
+- [Traversing a multi-dimensional slice](#traversing-a-multi-dimensional-slice)
+- [Concatenating 2 slices into one](#concatenating-2-slices-into-one)
+- [Removing duplicates from an array](#removing-duplicates-from-an-array)
+- [shallow clone an array](#shallow-clone-an-array)
+- [deep clone a slice](#deep-clone-a-slice)
+
+## List of dynamic data types
 
 ```go
 var list []any
@@ -14,7 +49,7 @@ fmt.Println(list)
 [true 34 John [1 2 3] map[0:48 A:65 a:97]]
 ```
 
-# Creating static list
+## Creating static list
 
 ```go
 var list [3]any
@@ -28,7 +63,7 @@ fmt.Println(list)
 [true 34 John]
 ```
 
-# Creating dynamic list
+## Creating dynamic list
 
 ```go
 var list []int
@@ -43,7 +78,7 @@ fmt.Println(list)
 [1 2 3 4]
 ```
 
-# Creating list for any type of map
+## Creating list for any type of map
 
 ```go
 list := []map[string]any{
@@ -76,7 +111,7 @@ map[age:25 married:true name:Elisa]
 map[age:28 married:false name:Henry]
 ```
 
-# Getting list size
+## Getting list size
 
 ```go
 list := []string{"ABC", "DEF", "GHI", "JKL"}
@@ -90,7 +125,7 @@ fmt.Println(size)
 4
 ```
 
-# Accessing list element at specific index
+## Accessing list element at specific index
 
 ```go
 list := []string{"ABC", "DEF", "GHI", "JKL"}
@@ -103,7 +138,7 @@ fmt.Println(list[0], list[1])
 ABC DEF
 ```
 
-# Updating list element at specific index
+## Updating list element at specific index
 
 ```go
 list := []string{"ABC", "DEF", "GHI", "JKL"}
@@ -117,7 +152,7 @@ fmt.Println(list[0])
 ZZZ
 ```
 
-# Removing list element at specific index
+## Removing list element at specific index
 
 ```go
 list := []string{"ABC", "DEF", "GHI", "JKL"}
@@ -135,7 +170,7 @@ fmt.Printf("Deleted at n(%d): %v\n", n, c)
 Deleted at n(2): [ABC DEF JKL]
 ```
 
-# Traversing a list
+## Traversing a list
 
 ```go
 list := []string{"ABC", "DEF", "GHI", "JKL"}
@@ -153,7 +188,7 @@ for i, e := range list {
 3 JKL
 ```
 
-# Comparing 2 lists based on their contents
+## Comparing 2 lists based on their contents
 
 **1st method:** Using custom function (Shallow check only)
 
@@ -210,7 +245,7 @@ if string(s1) == string(s2) {
 list1 equals list2
 ```
 
-# joining slice elements in a string
+## joining slice elements in a string
 
 ```go
 list := []string{"ABC", "DEF", "GHI"}
@@ -223,7 +258,7 @@ fmt.Println(strings.Join(list, ""))
 ABCDEFGHI
 ```
 
-# joining slice elements using custom string
+## joining slice elements using custom string
 
 ```go
 list := []string{"ABC", "DEF", "GHI"}
@@ -236,7 +271,7 @@ fmt.Println(strings.Join(list, "-"))
 ABC-DEF-GHI
 ```
 
-# check if an element exist in an array
+## check if an element exist in an array
 
 ```go
 list := []string{"ABC", "DEF", "GHI"}
@@ -253,7 +288,7 @@ if slices.Contains(list, "GHI") {
 list contains GHI
 ```
 
-# find element's index in an array
+## find element's index in an array
 
 ```go
 list := []string{"ABC", "DEF", "GHI"}
@@ -267,7 +302,7 @@ fmt.Println("Index of GHI:", index)
 2
 ```
 
-# find element's index from last in a slice
+## find element's index from last in a slice
 
 ```go
 list := []string{"A", "B", "A", "C"}
@@ -287,7 +322,7 @@ fmt.Println("Last Index of A:", index)
 2
 ```
 
-# inserting elements in a slice from end
+## inserting elements in a slice from end
 
 ```go
 list := []string{"A", "B", "C"}
@@ -301,7 +336,7 @@ fmt.Println(list)
 [A B C D]
 ```
 
-# inserting elements in a slice from start
+## inserting elements in a slice from start
 
 ```go
 list := []string{"B", "C", "D"}
@@ -315,7 +350,7 @@ fmt.Println(list)
 [A B C D]
 ```
 
-# inserting elements in a slice at specific index
+## inserting elements in a slice at specific index
 
 ```go
 old := []string{"A", "B", "D"}
@@ -332,7 +367,7 @@ fmt.Println(new)
 [A B C D]
 ```
 
-# removing n number of elements in a slice at specific index
+## removing n number of elements in a slice at specific index
 
 ```go
 old := []string{"A", "B", "C", "D", "E", "F"}
@@ -348,7 +383,7 @@ fmt.Println(new)
 [A B F]
 ```
 
-# removing an element from last in a slice
+## removing an element from last in a slice
 
 ```go
 old := []string{"A", "B", "C", "D"}
@@ -362,7 +397,7 @@ fmt.Println(new)
 [A B C]
 ```
 
-# reversing a slice
+## reversing a slice
 
 **1st method:** Efficient method
 
@@ -398,7 +433,7 @@ fmt.Println(new)
 [D C B A]
 ```
 
-# Clearing the list
+## Clearing the list
 
 ```go
 list := []string{"A", "B", "C", "D"}
@@ -412,7 +447,7 @@ fmt.Println(list)
 []
 ```
 
-# shuffle a list
+## shuffle a list
 
 ```go
 list := []string{"A", "B", "C", "D"}
@@ -429,7 +464,7 @@ fmt.Println(list)
 [B C D A]
 ```
 
-# Multi-dimensional slice (Nested slices)
+## Multi-dimensional slice (Nested slices)
 
 ```go
 points := [][]float64{
@@ -452,7 +487,7 @@ for i, e := range points {
 3 [0 0]
 ```
 
-# Traversing a multi-dimensional slice
+## Traversing a multi-dimensional slice
 
 ```go
 points := [][]float64{
@@ -478,7 +513,7 @@ for _, e := range points {
 0, 0, 0,
 ```
 
-# Concatenating 2 slices into one
+## Concatenating 2 slices into one
 
 ```go
 a := []int{1, 2, 3}
@@ -493,7 +528,7 @@ fmt.Println(c)
 [1 2 3 4 5 6]
 ```
 
-# Removing duplicates from an array
+## Removing duplicates from an array
 
 ```go
 func main() {
@@ -523,7 +558,7 @@ func RemoveDuplicates[T comparable](list []T) []T {
 [1 2 3 4]
 ```
 
-# shallow clone an array
+## shallow clone an array
 
 ```go
 list := []int{1, 2, 3, 4, 5}
@@ -538,7 +573,7 @@ fmt.Println(cloned)
 [1 2 3 4 5]
 ```
 
-# deep clone a slice
+## deep clone a slice
 
 ```go
 list := []int{1, 2, 3, 4, 5}
@@ -554,6 +589,7 @@ fmt.Println(cloned)
 [1 2 3 4 5]
 ```
 
+# Navigations
 
 | [< Previous Page](./numbers.md) | [Home Page](../README.md) | [Next Page >](./maps.md) |
 |---|---|---|

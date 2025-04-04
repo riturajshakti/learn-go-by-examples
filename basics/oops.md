@@ -1,6 +1,18 @@
-[Goto Home](../README.md)
+# OOPs
 
-# Creating a struct
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Creating a struct](#creating-a-struct)
+- [Creating Anonymous Struct](#creating-anonymous-struct)
+- [checking if a property exist in an object](#checking-if-a-property-exist-in-an-object)
+- [Traversing through all properties and its details in a struct](#traversing-through-all-properties-and-its-details-in-a-struct)
+- [instance methods](#instance-methods)
+- [Composition](#composition)
+
+## Creating a struct
 
 ```go
 type User struct {
@@ -24,7 +36,7 @@ func main() {
 {Alex 20}
 ```
 
-# Creating Anonymous Struct
+## Creating Anonymous Struct
 
 ```go
 user := struct {
@@ -50,7 +62,7 @@ fmt.Println(car)
 {Tesla red}
 ```
 
-# checking if a property exist in an object
+## checking if a property exist in an object
 
 ```go
 type User struct {
@@ -79,7 +91,7 @@ func main() {
 Age exist in User struct
 ```
 
-# Traversing through all properties and its details in a struct
+## Traversing through all properties and its details in a struct
 
 ```go
 type User struct {
@@ -122,7 +134,7 @@ Field Tag (xml): AGE
 ---------
 ```
 
-# instance methods
+## instance methods
 
 ```go
 type User struct {
@@ -148,7 +160,7 @@ User{Name: John, Age: 23}
 User{Name: John, Age: 23}
 ```
 
-# Composition
+## Composition
 
 ```go
 type User struct {
@@ -176,6 +188,7 @@ func main() {
 {John 23 {B 123, Rd 23 Rock Port 123456 UK}}
 ```
 
+# Navigations
 
 | [< Previous Page](./modules.md) | [Home Page](../README.md) | [Next Page >](../advanced/web-client.md) |
 |---|---|---|

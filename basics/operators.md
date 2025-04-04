@@ -1,6 +1,14 @@
-[Goto Home](../README.md)
+# Operators
 
-# Increment/Decrement Operators
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Increment/Decrement Operators](#incrementdecrement-operators)
+- [Conditional Operators](#conditional-operators)
+
+## Increment/Decrement Operators
 
 ```go
 n := 9
@@ -17,7 +25,9 @@ fmt.Println(n)
 9
 ```
 
-# Conditional Operators
+## Conditional Operators
+
+There is no conditional operator in go, but we can achieve it using custom function
 
 ```go
 func main() {
@@ -40,6 +50,7 @@ func Conditional[T any](condition bool, truthy T, falsy T) T {
 4 is larger
 ```
 
+# Navigations
 
 | [< Previous Page](./regex.md) | [Home Page](../README.md) | [Next Page >](./datetime.md) |
 |---|---|---|

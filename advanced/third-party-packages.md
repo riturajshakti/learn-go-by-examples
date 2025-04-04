@@ -1,6 +1,15 @@
-[Goto Home](../README.md)
+# Third Party Packages
 
-# Sample program to convert markdown into html
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Sample program to convert markdown into html](#sample-program-to-convert-markdown-into-html)
+- [Install a package to convert markdown to html](#install-a-package-to-convert-markdown-to-html)
+- [Use the package module in the codebase](#use-the-package-module-in-the-codebase)
+
+## Sample program to convert markdown into html
 
 - Create a folder named `md2html`
 
@@ -12,13 +21,13 @@
 go mod init md2html
 ```
 
-# Install a package to convert markdown to html
+## Install a package to convert markdown to html
 
 ```sh
 go get github.com/gomarkdown/markdown
 ```
 
-# Use the package module in the codebase
+## Use the package module in the codebase
 
 ```go
 package main
@@ -99,6 +108,7 @@ func main() {
 </code></pre>
 ```
 
+# Navigations
 
 | [< Previous Page](./generics.md) | [Home Page](../README.md) | Next Page > |
 |---|---|---|

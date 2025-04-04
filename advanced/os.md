@@ -1,6 +1,17 @@
-[Goto Home](../README.md)
+# Operating Systems
 
-# run system command
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [run system command](#run-system-command)
+- [print info and error logs after running system command](#print-info-and-error-logs-after-running-system-command)
+- [exit a program](#exit-a-program)
+- [spawn a new process](#spawn-a-new-process)
+- [check memory, cpu, platform, and network interface details](#check-memory-cpu-platform-and-network-interface-details)
+
+## run system command
 
 ```go
 package main
@@ -20,7 +31,7 @@ func main() {
 <Computer will get hibernated>
 ```
 
-# print info and error logs after running system command
+## print info and error logs after running system command
 
 ```go
 package main
@@ -65,7 +76,7 @@ d-----        06-02-2025  02:19 PM                tmp
 -a----        06-02-2025  12:28 PM          10973 README.md
 ```
 
-# exit a program
+## exit a program
 
 **Using os.Exit:**
 
@@ -115,7 +126,7 @@ Going to exit
 2025/02/06 14:23:09
 ```
 
-# spawn a new process
+## spawn a new process
 
 ```go
 package main
@@ -152,7 +163,7 @@ func main() {
 Command executed successfully
 ```
 
-# check memory, cpu, platform, and network interface details
+## check memory, cpu, platform, and network interface details
 
 ```go
 package main
@@ -234,6 +245,7 @@ Interface: Loopback Pseudo-Interface 1
   IP Address: 127.0.0.1/8
 ```
 
+# Navigations
 
 | [< Previous Page](./files-folders.md) | [Home Page](../README.md) | [Next Page >](./iterators.md) |
 |---|---|---|

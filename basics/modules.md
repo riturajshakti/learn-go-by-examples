@@ -1,6 +1,13 @@
-[Goto Home](../README.md)
+# Modules
 
-# Creating & Using Package
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Creating & Using Package](#creating--using-package)
+
+## Creating & Using Package
 
 ```go
 // utils/utils.go
@@ -36,6 +43,7 @@ func main() {
 Sum = 15
 ```
 
+# Navigations
 
 | [< Previous Page](./concurrency.md) | [Home Page](../README.md) | [Next Page >](./oops.md) |
 |---|---|---|

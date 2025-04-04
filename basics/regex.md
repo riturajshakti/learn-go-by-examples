@@ -1,6 +1,16 @@
-[Goto Home](../README.md)
+# Regular Expressions
 
-# Creating a regex from string
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Creating a regex from string](#creating-a-regex-from-string)
+- [Creating a regex from string with options e.g. `g`, `i`, ...](#creating-a-regex-from-string-with-options-eg-g-i-)
+- [Checking if a string follows a regex](#checking-if-a-string-follows-a-regex)
+- [Finding all matching substrings from a string with given regex](#finding-all-matching-substrings-from-a-string-with-given-regex)
+
+## Creating a regex from string
 
 ```go
 s := "The quick brown fox jumps over the lazy dog"
@@ -18,7 +28,7 @@ if regex.Match([]byte(s)) {
 Fox found
 ```
 
-# Creating a regex from string with options e.g. `g`, `i`, ...
+## Creating a regex from string with options e.g. `g`, `i`, ...
 
 ```go
 s := "The quick brown fox jumps over the lazy dog"
@@ -36,7 +46,7 @@ if regex.Match([]byte(s)) {
 Fox found
 ```
 
-# Checking if a string follows a regex
+## Checking if a string follows a regex
 
 ```go
 s := "The quick brown fox jumps over the lazy dog"
@@ -54,7 +64,7 @@ if regex.Match([]byte(s)) {
 Fox found
 ```
 
-# Finding all matching substrings from a string with given regex
+## Finding all matching substrings from a string with given regex
 
 ```go
 s := "The quick brown fox jumps over the lazy dog"
@@ -71,6 +81,7 @@ The
 the
 ```
 
+# Navigations
 
 | [< Previous Page](./maps.md) | [Home Page](../README.md) | [Next Page >](./operators.md) |
 |---|---|---|

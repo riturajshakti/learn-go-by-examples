@@ -1,6 +1,21 @@
-[Goto Home](../README.md)
+# Date and Time
 
-# Creating a Date from custom date and time
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Creating a Date from custom date and time](#creating-a-date-from-custom-date-and-time)
+- [Creating a Date from custom timestamps (milliseconds since epoch)](#creating-a-date-from-custom-timestamps-milliseconds-since-epoch)
+- [Creating a Date with current timestamp](#creating-a-date-with-current-timestamp)
+- [Getting details from date](#getting-details-from-date)
+- [Converting a Date into ISO string](#converting-a-date-into-iso-string)
+- [Create time from iso string](#create-time-from-iso-string)
+- [Adding Day/Hour/Minute/Second/Millisecond to a Date](#adding-dayhourminutesecondmillisecond-to-a-date)
+- [Comparing `<`, `>`, `<=`, `>=` and `==` on 2 dates](#comparing-----and--on-2-dates)
+- [Finding the difference between 2 Dates](#finding-the-difference-between-2-dates)
+
+## Creating a Date from custom date and time
 
 ```go
 date := time.Date(2025, time.February, 3, 10, 55, 0, 0, time.UTC)
@@ -17,7 +32,7 @@ fmt.Println(date)
 2025-02-03 10:55:00 +0530 IST
 ```
 
-# Creating a Date from custom timestamps (milliseconds since epoch)
+## Creating a Date from custom timestamps (milliseconds since epoch)
 
 ```go
 millis := 1738560300000
@@ -31,7 +46,7 @@ fmt.Println(date)
 2025-02-03 10:55:00 +0530 IST
 ```
 
-# Creating a Date with current timestamp
+## Creating a Date with current timestamp
 
 ```go
 date := time.Now()
@@ -44,7 +59,7 @@ fmt.Println(date)
 2025-02-04 11:05:34.2256879 +0530 IST m=+0.000614401
 ```
 
-# Getting details from date
+## Getting details from date
 
 Getting the following details from a Date: `year`, `month`, `date`, `hour`, `minute`, `second`, `millisecond`, `milliseconds since epoch`, `day of week`
 
@@ -75,7 +90,7 @@ MilliSecond since epoch: 1738647768119
 Day of week: Tuesday
 ```
 
-# Converting a Date into ISO string
+## Converting a Date into ISO string
 
 ```go
 date := time.Now()
@@ -89,7 +104,7 @@ fmt.Println(s)
 2025-02-04T11:15:01+05:30
 ```
 
-# Create time from iso string
+## Create time from iso string
 
 ```go
 s := "2025-02-04T11:15:01.876+05:30"
@@ -103,7 +118,7 @@ fmt.Println(date)
 2025-02-04 11:15:01.876 +0530 IST
 ```
 
-# Adding Day/Hour/Minute/Second/Millisecond to a Date
+## Adding Day/Hour/Minute/Second/Millisecond to a Date
 
 ```go
 s := "2025-02-04T22:15:01.876+05:30"
@@ -122,7 +137,7 @@ fmt.Println(date)
 2025-02-07 01:25:03.881 +0530 IST
 ```
 
-# Comparing `<`, `>`, `<=`, `>=` and `==` on 2 dates
+## Comparing `<`, `>`, `<=`, `>=` and `==` on 2 dates
 
 ```go
 a := "2025-02-04T22:15:01+05:30"
@@ -148,7 +163,7 @@ a >= b:  true
 a != b:  true
 ```
 
-# Finding the difference between 2 Dates
+## Finding the difference between 2 Dates
 
 ```go
 a := "2025-02-04T22:15:01+05:30"
@@ -166,6 +181,7 @@ a - b:  63072000000
 In days:  730
 ```
 
+# Navigations
 
 | [< Previous Page](./operators.md) | [Home Page](../README.md) | [Next Page >](./conditionals-loops.md) |
 |---|---|---|

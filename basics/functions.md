@@ -1,6 +1,28 @@
-[Goto Home](../README.md)
+# Functions
 
-# returning multiple values from a function
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [returning multiple values from a function](#returning-multiple-values-from-a-function)
+- [creating function with unlimited parameters](#creating-function-with-unlimited-parameters)
+- [passing an array elements to a function with unlimited params](#passing-an-array-elements-to-a-function-with-unlimited-params)
+- [creating anonymous functions](#creating-anonymous-functions)
+- [self invoking function](#self-invoking-function)
+- [creating closures which manages states](#creating-closures-which-manages-states)
+- [Higher Order Function: Map](#higher-order-function-map)
+- [Higher Order Function: Filter](#higher-order-function-filter)
+- [Higher Order Function: Sort](#higher-order-function-sort)
+- [Higher Order Function: ForEach](#higher-order-function-foreach)
+- [Higher Order Function: Some/Any](#higher-order-function-someany)
+- [Higher Order Function: Every](#higher-order-function-every)
+- [Higher Order Function: Find](#higher-order-function-find)
+- [Higher Order Function: FindIndex](#higher-order-function-findindex)
+- [Higher Order Function: Reduce](#higher-order-function-reduce)
+- [Higher Order Function: Group](#higher-order-function-group)
+
+## returning multiple values from a function
 
 ```go
 func main() {
@@ -30,7 +52,7 @@ func Area(radius float64) (float64, error) {
 0 radius must be positive
 ```
 
-# creating function with unlimited parameters
+## creating function with unlimited parameters
 
 ```go
 func main() {
@@ -52,7 +74,7 @@ true
 Test
 ```
 
-# passing an array elements to a function with unlimited params
+## passing an array elements to a function with unlimited params
 
 ```go
 func main() {
@@ -70,7 +92,7 @@ func Log(values ...any) {
 3 true Test
 ```
 
-# creating anonymous functions
+## creating anonymous functions
 
 ```go
 square := func(n int) int { return n * n }
@@ -83,7 +105,7 @@ fmt.Println(square(3))
 9
 ```
 
-# self invoking function
+## self invoking function
 
 ```go
 square := func(n int) int { return n * n }(10)
@@ -96,7 +118,7 @@ fmt.Println(square)
 100
 ```
 
-# creating closures which manages states
+## creating closures which manages states
 
 **Counter Example:**
 
@@ -190,7 +212,7 @@ Name changed
 Name: John, Age: 21, Married: true
 ```
 
-# Higher Order Function: Map
+## Higher Order Function: Map
 
 ```go
 func main() {
@@ -218,7 +240,7 @@ func Map[T any, R any](list []T, f func(e T, i int) R) []R {
 string
 ```
 
-# Higher Order Function: Filter
+## Higher Order Function: Filter
 
 ```go
 func main() {
@@ -246,7 +268,7 @@ func Filter[T any](list []T, f func(e T, i int) bool) []T {
 [2 4 6]
 ```
 
-# Higher Order Function: Sort
+## Higher Order Function: Sort
 
 ```go
 type User struct {
@@ -338,7 +360,7 @@ Sorted by date:
 {Zac 37 2027-09-24 06:34:34 +0000 UTC}
 ```
 
-# Higher Order Function: ForEach
+## Higher Order Function: ForEach
 
 ```go
 func main() {
@@ -361,7 +383,7 @@ func ForEach[T any](list []T, f func(e T, i int)) {
 2 Paul
 ```
 
-# Higher Order Function: Some/Any
+## Higher Order Function: Some/Any
 
 ```go
 func main() {
@@ -388,7 +410,7 @@ func Any[T any](list []T, f func(e T, i int) bool) bool {
 Any name starts with Vowel: true
 ```
 
-# Higher Order Function: Every
+## Higher Order Function: Every
 
 ```go
 func main() {
@@ -415,7 +437,7 @@ func Every[T any](list []T, f func(e T, i int) bool) bool {
 Every name starts with Vowel: false
 ```
 
-# Higher Order Function: Find
+## Higher Order Function: Find
 
 ```go
 func main() {
@@ -444,7 +466,7 @@ func Find[T any](list []T, f func(e T, i int) bool) (T, error) {
 Vowel name: Amy
 ```
 
-# Higher Order Function: FindIndex
+## Higher Order Function: FindIndex
 
 ```go
 func main() {
@@ -471,7 +493,7 @@ func FindIndex[T any](list []T, f func(e T, i int) bool) int {
 Vowel name index: 0
 ```
 
-# Higher Order Function: Reduce
+## Higher Order Function: Reduce
 
 ```go
 func main() {
@@ -503,7 +525,7 @@ Sum: 15
 Product: 120
 ```
 
-# Higher Order Function: Group
+## Higher Order Function: Group
 
 ```go
 func main() {
@@ -537,6 +559,7 @@ func Group[T any](list []T, rules map[string]func(e T, i int) bool) map[string][
 Grouped: map[even:[2 4 6 8] odd:[1 3 5 7]]
 ```
 
+# Navigations
 
 | [< Previous Page](./conditionals-loops.md) | [Home Page](../README.md) | [Next Page >](./json.md) |
 |---|---|---|

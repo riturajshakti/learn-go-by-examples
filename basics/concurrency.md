@@ -1,6 +1,21 @@
-[Goto Home](../README.md)
+# Concurrency
 
-# sleep for n milliseconds
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [sleep for n milliseconds](#sleep-for-n-milliseconds)
+- [run a function asynchronously](#run-a-function-asynchronously)
+- [wait for multiple asynchronous functions to complete](#wait-for-multiple-asynchronous-functions-to-complete)
+- [wait for at least one asynchronous function to complete](#wait-for-at-least-one-asynchronous-function-to-complete)
+- [passing data between asynchronous function and main function](#passing-data-between-asynchronous-function-and-main-function)
+- [perform an operation after some delay](#perform-an-operation-after-some-delay)
+- [perform an operation after every specific interval](#perform-an-operation-after-every-specific-interval)
+- [Calculating time interval for any operations](#calculating-time-interval-for-any-operations)
+- [Thread safe variable](#thread-safe-variable)
+
+## sleep for n milliseconds
 
 ```go
 fmt.Println("Sleeping for 1 sec...")
@@ -15,7 +30,7 @@ Sleeping for 1 sec...
 Done
 ```
 
-# run a function asynchronously
+## run a function asynchronously
 
 **Using Channel:**
 
@@ -61,7 +76,7 @@ From background
 Hello world
 ```
 
-# wait for multiple asynchronous functions to complete
+## wait for multiple asynchronous functions to complete
 
 **Using Channels:**
 
@@ -152,7 +167,7 @@ fmt.Println("All completed")
 All completed
 ```
 
-# wait for at least one asynchronous function to complete
+## wait for at least one asynchronous function to complete
 
 **Using Channels:**
 
@@ -201,7 +216,7 @@ At least one completed
 Others also completed
 ```
 
-# passing data between asynchronous function and main function
+## passing data between asynchronous function and main function
 
 ```go
 answer := make(chan int)
@@ -220,7 +235,7 @@ calculating result...
 Result is: 42
 ```
 
-# perform an operation after some delay
+## perform an operation after some delay
 
 ```go
 fmt.Println("Timer started...")
@@ -236,7 +251,7 @@ Timer started...
 After time completed
 ```
 
-# perform an operation after every specific interval
+## perform an operation after every specific interval
 
 ```go
 fmt.Println("Timer started...")
@@ -266,7 +281,7 @@ Timer started...
 Completed!
 ```
 
-# Calculating time interval for any operations
+## Calculating time interval for any operations
 
 ```go
 start := time.Now()
@@ -282,7 +297,7 @@ fmt.Println("Time Taken:", end.UnixMilli()-start.UnixMilli(), "ms")
 Time Taken: 84 ms
 ```
 
-# Thread safe variable
+## Thread safe variable
 
 ```go
 type SafeCounter struct {
@@ -325,6 +340,7 @@ func main() {
 Final count: 10
 ```
 
+# Navigations
 
 | [< Previous Page](./errors.md) | [Home Page](../README.md) | [Next Page >](./modules.md) |
 |---|---|---|

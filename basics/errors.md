@@ -1,6 +1,14 @@
-[Goto Home](../README.md)
+# Errors
 
-# exit a program (throwing errors)
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [exit a program (throwing errors)](#exit-a-program-throwing-errors)
+- [prevent a program from exit](#prevent-a-program-from-exit)
+
+## exit a program (throwing errors)
 
 ```go
 func main() {
@@ -18,7 +26,7 @@ main.main()
         C:/Users/ritur/Desktop/My_Works/Learn/Go/go-tutorial/main.go:4 +0x25
 ```
 
-# prevent a program from exit
+## prevent a program from exit
 
 ```go
 func main() {
@@ -37,6 +45,7 @@ func main() {
 Recovered here: exiting
 ```
 
+# Navigations
 
 | [< Previous Page](./json.md) | [Home Page](../README.md) | [Next Page >](./concurrency.md) |
 |---|---|---|

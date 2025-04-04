@@ -1,6 +1,29 @@
-[Goto Home](../README.md)
+# Files and Folders
 
-# Read a text file
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Read a text file](#read-a-text-file)
+- [Read a text file line-by-line](#read-a-text-file-line-by-line)
+- [Read a binary file](#read-a-binary-file)
+- [Read a binary file in chunks for large files](#read-a-binary-file-in-chunks-for-large-files)
+- [Check if file exist](#check-if-file-exist)
+- [Create a text/binary file](#create-a-textbinary-file)
+- [Append to a binary file at end](#append-to-a-binary-file-at-end)
+- [Append to a binary file at any index](#append-to-a-binary-file-at-any-index)
+- [Copy a file](#copy-a-file)
+- [Delete a file](#delete-a-file)
+- [Rename a file](#rename-a-file)
+- [Move a file](#move-a-file)
+- [Create folder](#create-folder)
+- [Delete folder](#delete-folder)
+- [Rename folder](#rename-folder)
+- [Check if folder exist](#check-if-folder-exist)
+- [Traverse folder](#traverse-folder)
+
+## Read a text file
 
 ```go
 package main
@@ -27,7 +50,7 @@ func main() {
 Hello Golang
 ```
 
-# Read a text file line-by-line
+## Read a text file line-by-line
 
 ```go
 package main
@@ -66,7 +89,7 @@ Hello John
 How are you?
 ```
 
-# Read a binary file
+## Read a binary file
 
 ```go
 package main
@@ -109,7 +132,7 @@ func main() {
 Binary data (hex): 255044462d312e340a25e2e3cfd30a352030206f626a0a3c3c0a2f636120310a2f424d202f4e6f726d616c0a3e3e0a656e646f626a0a392030206f626a0a3c3c0a2f4c656e677468312031363136300a2
 ```
 
-# Read a binary file in chunks for large files
+## Read a binary file in chunks for large files
 
 ```go
 package main
@@ -154,7 +177,7 @@ Read 64 bytes: 09785445f6efa9baf7f696eef492ad9334e91b3ae9481a0824014288496705268
 Read 51 bytes: 4146373835413643433039443644364630453141393236423e5d0a3e3e0a7374617274787265660a393839370a2525454f460a
 ```
 
-# Check if file exist
+## Check if file exist
 
 ```go
 package main
@@ -180,7 +203,7 @@ func main() {
 File exists
 ```
 
-# Create a text/binary file
+## Create a text/binary file
 
 **Creating text file:**
 
@@ -250,7 +273,7 @@ func main() {
 File created successfully
 ```
 
-# Append to a binary file at end
+## Append to a binary file at end
 
 ```go
 package main
@@ -286,7 +309,7 @@ func main() {
 Binary data appended successfully
 ```
 
-# Append to a binary file at any index
+## Append to a binary file at any index
 
 ```go
 package main
@@ -332,7 +355,7 @@ func main() {
 Binary data written at index 14 successfully
 ```
 
-# Copy a file
+## Copy a file
 
 ```go
 package main
@@ -380,7 +403,7 @@ func main() {
 File copied successfully
 ```
 
-# Delete a file
+## Delete a file
 
 ```go
 package main
@@ -407,7 +430,7 @@ func main() {
 File deleted successfully
 ```
 
-# Rename a file
+## Rename a file
 
 ```go
 package main
@@ -437,7 +460,7 @@ func main() {
 File renamed successfully
 ```
 
-# Move a file
+## Move a file
 
 ```go
 package main
@@ -475,7 +498,7 @@ func main() {
 Files moved successfully
 ```
 
-# Create folder
+## Create folder
 
 ```go
 package main
@@ -505,7 +528,7 @@ func main() {
 Directory created successfully
 ```
 
-# Delete folder
+## Delete folder
 
 ```go
 package main
@@ -533,7 +556,7 @@ func main() {
 Folder deleted successfully
 ```
 
-# Rename folder
+## Rename folder
 
 ```go
 package main
@@ -563,7 +586,7 @@ func main() {
 Folder renamed successfully
 ```
 
-# Check if folder exist
+## Check if folder exist
 
 ```go
 package main
@@ -594,7 +617,7 @@ func main() {
 Folder does not exist
 ```
 
-# Traverse folder
+## Traverse folder
 
 **1st Method:** Traverse at root level of directory only using `os.ReadDir`
 
@@ -677,6 +700,7 @@ Directory: temp\test
 File: temp\test\ok.txt
 ```
 
+# Navigations
 
 | [< Previous Page](./web-client.md) | [Home Page](../README.md) | [Next Page >](./os.md) |
 |---|---|---|

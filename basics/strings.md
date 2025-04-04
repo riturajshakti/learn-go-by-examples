@@ -1,6 +1,38 @@
-[Goto Home](../README.md)
+# Strings
 
-# Single line strings
+| [🏠Goto Home](../README.md) | [Goto Bottom🔻](#navigations) |
+|---|---|
+
+# Topics
+
+- [Single line strings](#single-line-strings)
+- [Multiline strings](#multiline-strings)
+- [Template Literals/String Interpolation](#template-literalsstring-interpolation)
+- [Formatted strings](#formatted-strings)
+- [Accessing the character of string at specific index](#accessing-the-character-of-string-at-specific-index)
+- [Traversing through a string](#traversing-through-a-string)
+- [Comparing 2 strings](#comparing-2-strings)
+- [Getting string size](#getting-string-size)
+- [Concatenating strings](#concatenating-strings)
+- [Reversing a string](#reversing-a-string)
+- [Converting a string character into ASCII code](#converting-a-string-character-into-ascii-code)
+- [Converting a ASCII code into string character](#converting-a-ascii-code-into-string-character)
+- [finding substring from index a to b](#finding-substring-from-index-a-to-b)
+- [finding uppercase of a string](#finding-uppercase-of-a-string)
+- [finding lowercase of a string](#finding-lowercase-of-a-string)
+- [split a string based on specific string](#split-a-string-based-on-specific-string)
+- [trimming a string from left side](#trimming-a-string-from-left-side)
+- [trimming a string from right side](#trimming-a-string-from-right-side)
+- [trimming a string from both side](#trimming-a-string-from-both-side)
+- [checking if string has a specific string](#checking-if-string-has-a-specific-string)
+- [replacing a substring with new string](#replacing-a-substring-with-new-string)
+- [finding the index of specific string](#finding-the-index-of-specific-string)
+- [finding the last index of specific string](#finding-the-last-index-of-specific-string)
+- [check if a string starts with a specific string](#check-if-a-string-starts-with-a-specific-string)
+- [check if a string ends with a specific string](#check-if-a-string-ends-with-a-specific-string)
+- [repeat a string](#repeat-a-string)
+
+## Single line strings
 
 ```go
 s := "Single line string"
@@ -13,7 +45,7 @@ fmt.Println(s)
 Single line string
 ```
 
-# Multiline strings
+## Multiline strings
 
 ```go
 s := `This is a
@@ -28,7 +60,7 @@ This is a
 multiline string
 ```
 
-# Template Literals/String Interpolation
+## Template Literals/String Interpolation
 
 ```go
 name, age, married := "Raj", 30, false
@@ -42,7 +74,7 @@ fmt.Println(s)
 Name=Raj, Age=30, Married=false
 ```
 
-# Formatted strings
+## Formatted strings
 
 ```go
 fmt.Printf("%-8s%-8s%-8s\n", "Name", "Age", "Married")
@@ -58,22 +90,24 @@ John    20      false
 Alex    24      true
 ```
 
-# Accessing the character of string at specific index
+## Accessing the character of string at specific index
 
 ```go
 s := "The quick brown fox jumps over the lazy dog"
 fmt.Println(s)
-fmt.Println("String size:", len(s))
+fmt.Printf("1st character: %c\n", s[0])
+fmt.Printf("2nd character: %c\n", s[1])
 ```
 
 **Output:**
 
 ```
 The quick brown fox jumps over the lazy dog
-String size: 43
+1st character: T
+2nd character: h
 ```
 
-# Traversing through a string
+## Traversing through a string
 
 ```go
 s := "ABC"
@@ -92,7 +126,7 @@ ABC
 2 C
 ```
 
-# Comparing 2 strings
+## Comparing 2 strings
 
 ```go
 a := "ABC"
@@ -114,7 +148,7 @@ a=ABC, b=DEF
 a comes first
 ```
 
-# Getting string size
+## Getting string size
 
 ```go
 a := "ABC"
@@ -127,7 +161,7 @@ fmt.Printf("a=%s, len(a)=%d\n", a, len(a))
 a=ABC, len(a)=3
 ```
 
-# Concatenating strings
+## Concatenating strings
 
 ```go
 c := "ABC" + "DEF"
@@ -140,7 +174,7 @@ fmt.Println(c)
 ABCDEF
 ```
 
-# Reversing a string
+## Reversing a string
 
 ```go
 s := "ABCDEF"
@@ -157,7 +191,7 @@ fmt.Println(r)
 FEDCBA
 ```
 
-# Converting a string character into ASCII code
+## Converting a string character into ASCII code
 
 ```go
 s := "ABCDEF"
@@ -171,7 +205,7 @@ fmt.Println(n)
 65
 ```
 
-# Converting a ASCII code into string character
+## Converting a ASCII code into string character
 
 ```go
 n := 65
@@ -187,7 +221,7 @@ A
 Typeof s: string
 ```
 
-# finding substring from index a to b
+## finding substring from index a to b
 
 ```go
 s := "Hello World"
@@ -202,7 +236,7 @@ Hello World
 ello
 ```
 
-# finding uppercase of a string
+## finding uppercase of a string
 
 ```go
 s := "Hello World"
@@ -215,7 +249,7 @@ fmt.Println(strings.ToUpper(s))
 HELLO WORLD
 ```
 
-# finding lowercase of a string
+## finding lowercase of a string
 
 ```go
 s := "Hello World"
@@ -228,7 +262,7 @@ fmt.Println(strings.ToLower(s))
 hello world
 ```
 
-# split a string based on specific string
+## split a string based on specific string
 
 ```go
 s := "Hello World"
@@ -242,7 +276,7 @@ fmt.Println(list)
 [Hello World]
 ```
 
-# trimming a string from left side
+## trimming a string from left side
 
 ```go
 s := "\n   Hello World"
@@ -256,7 +290,7 @@ fmt.Println(trimmed)
 Hello World
 ```
 
-# trimming a string from right side
+## trimming a string from right side
 
 ```go
 s := "Hello World  \n\n\n"
@@ -270,7 +304,7 @@ fmt.Println(trimmed)
 Hello World
 ```
 
-# trimming a string from both side
+## trimming a string from both side
 
 ```go
 s := "\n\n\n   Hello World  \n\n\n"
@@ -284,7 +318,7 @@ fmt.Println(trimmed)
 Hello World
 ```
 
-# checking if string has a specific string
+## checking if string has a specific string
 
 ```go
 s := "The quick brown fox jumps over the lazy dog"
@@ -303,7 +337,7 @@ The quick brown fox jumps over the lazy dog
 String contains 'lazy'
 ```
 
-# replacing a substring with new string
+## replacing a substring with new string
 
 ```go
 s := "I am Rituraj. mY age is 30, mY country is India"
@@ -318,7 +352,7 @@ I am Rituraj. mY age is 30, mY country is India
 I am Rituraj. My age is 30, My country is India
 ```
 
-# finding the index of specific string
+## finding the index of specific string
 
 ```go
 s := "The quick brown fox jumps over the lazy dog"
@@ -333,7 +367,7 @@ The quick brown fox jumps over the lazy dog
 Index of 'fox': 16
 ```
 
-# finding the last index of specific string
+## finding the last index of specific string
 
 ```go
 s := "The quick brown fox jumps over the lazy dog"
@@ -348,7 +382,7 @@ The quick brown fox jumps over the lazy dog
 Last Index of 'o': 41
 ```
 
-# check if a string starts with a specific string
+## check if a string starts with a specific string
 
 ```go
 s := "The quick brown fox jumps over the lazy dog"
@@ -363,7 +397,7 @@ The quick brown fox jumps over the lazy dog
 Starts with 'The': true
 ```
 
-# check if a string ends with a specific string
+## check if a string ends with a specific string
 
 ```go
 s := "The quick brown fox jumps over the lazy dog"
@@ -378,7 +412,7 @@ The quick brown fox jumps over the lazy dog
 Ends with 'dog': true
 ```
 
-# repeat a string
+## repeat a string
 
 ```go
 s := "ABC"
@@ -391,6 +425,7 @@ fmt.Println(strings.Repeat(s, 3))
 ABCABCABC
 ```
 
+# Navigations
 
 | [< Previous Page](./console-io.md) | [Home Page](../README.md) | [Next Page >](./data-types.md) |
 |---|---|---|
